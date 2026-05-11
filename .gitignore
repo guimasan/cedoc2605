@@ -1,0 +1,23 @@
+# Backups and restore artifacts
+*.sql
+*.sql.gz
+*.tar.gz
+*.zip
+.hostgator-restore/
+.deploy/
+
+# Local environment and generated assets
+node_modules/
+vendor/
+**/node_modules/
+**/vendor/
+**/.sass-cache/
+**/*.map
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Sensitive local notes
+CREDENCIAIS-TEMPLATE.md
