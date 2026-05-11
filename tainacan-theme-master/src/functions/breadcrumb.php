@@ -7,7 +7,7 @@ function tainacan_interface_the_breadcrumb() {
 	ob_start();
 	$showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
 	$delimiter = '>'; // delimiter between crumbs
-	$home = __('Home', 'tainacan-interface'); // text for the 'Home' link
+	$home = __('Página Inicial', 'tainacan-interface'); // text for the 'Home' link
 	$showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
 	$before = '<span class="current text-black"> '; // tag before the current crumb
 	$after = '</span>'; // tag after the current crumb

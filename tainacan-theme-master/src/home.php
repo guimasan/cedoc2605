@@ -41,36 +41,12 @@ get_template_part( 'template-parts/bannerheader' );
 		</div>
 	</section>
 
-	<!-- CEDOC/CEACA CTA BUTTONS SECTION -->
-	<section class="cedoc-cta-section py-5" style="background-color: #fff;">
-		<div class="container-fluid max-large margin-one-column">
-			<div class="row">
-				<div class="col-12 col-md-6 mb-4 mb-md-0">
-					<div class="cedoc-cta-button cedoc-cta-cedoc text-center p-5 rounded" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; cursor: pointer; text-decoration: none; display: block; min-height: 200px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-						<h3 class="mb-3">Centro de Documentação</h3>
-						<p class="mb-4">CEDOC</p>
-						<a href="<?php echo esc_url(get_page_link(cedoc_get_page_by_slug('centro-de-documentacao'))); ?>" class="btn btn-light">
-							Acessar
-						</a>
-					</div>
-				</div>
-				<div class="col-12 col-md-6">
-					<div class="cedoc-cta-button cedoc-cta-ceaca text-center p-5 rounded" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; cursor: pointer; text-decoration: none; display: block; min-height: 200px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-						<h3 class="mb-3">Centro de Estudos e Aplicação</h3>
-						<p class="mb-4">CEACA</p>
-						<a href="<?php echo esc_url(get_page_link(cedoc_get_page_by_slug('centro-de-documentacao'))); ?>" class="btn btn-light">
-							Acessar
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+	<!-- CEDOC/CEACA CTA BUTTONS SECTION removed (redundant) -->
 
 	<!-- CATEGORIES DROPDOWN / ACCORDION SECTION -->
 	<section class="cedoc-categories-section py-5" style="background-color: #f8f9fa;">
 		<div class="container-fluid max-large margin-one-column">
-			<h2 class="mb-5 text-center">Explore as Subcategorias</h2>
+			<h2 class="mb-5 text-center">CEACA - Centro de Estudos e Aplicação da Capoeira</h2>
 			
 			<div class="accordion cedoc-categories-accordion" id="cedocCategoriesAccordion">
 				<?php
