@@ -3,42 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre - CEACA CEDOC</title>
+  <title>Sobre - Versão 2</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body data-image-base="assets/images/">
-  <header class="versions-topbar" aria-label="Navegação entre versões">
-    <a href="versoes/index.html">Hub</a>
-    <a class="active" href="index.html">Versão 1</a>
-    <a href="versoes/versao-2/index.html">Versão 2</a>
-    <a href="versoes/versao-3/index.html">Versão 3</a>
-  </header>
-  <header>
-    <h1>Sobre o CEACA e o CEDOC</h1>
-    <nav>
-      <a href="index.html">Início</a>
-      <a href="catalogo.html">Catálogo</a>
-      <a href="sobre.html">Sobre</a>
-      <a href="contato.html">Contato</a>
-      <a href="versoes/index.html">Versões</a>
-    </nav>
-  </header>
-  <main>
-    <section>
-      <h2 id="ceaca-sobre-nos">O CEACA</h2>
-      <div class="random-gallery" aria-label="Imagens institucionais">
-        <img data-random="true" src="assets/images/logo.svg" alt="Imagem institucional 1">
-        <img data-random="true" src="assets/images/logo-footer.svg" alt="Imagem institucional 2">
-        <img data-random="true" src="assets/images/section_default.png" alt="Imagem institucional 3">
-      </div>
-      <p>O Centro de Estudos e Aplicação da Capoeira (CEACA) é uma associação sem fins lucrativos que promove a Capoeira e a cultura afro-brasileira como um bem que deve ser compartilhado e investigado. Tem como missão preservar e promover as culturas de tradição oral, em especial a capoeira, compartilhando dos seus benefícios sociais para a formação de seres humanos integrados com a sua realidade. Fundada em 20 de abril de 1988, registrada com CNPJ 06.116.648/0001-04 (02.02.2004).</p>
-      <h2>O CEDOC</h2>
-      <p>O Centro de Documentação do CEACA tem sob sua responsabilidade um robusto acervo documental que merece ser devidamente preservado e extrovertido. As principais coleções são os registros de atividades desenvolvidas pela associação, como formação de capoeiristas e apresentações culturais, que compõem a história da associação e refletem o comprometimento do trabalho de seu presidente e associados. Essas coleções são compostas por doações de imagens, documentos e objetos feitas pelos associados.</p>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2026 CEACA CEDOC. E-mail: capoeiraceaca@gmail.com</p>
-  </footer>
+  <div class="layout">
+    <aside class="sidebar card">
+      <span class="eyebrow">Versão 2</span>
+      <h1>Sobre.</h1>
+      <p>Contexto institucional com foco editorial e visual limpo.</p>
+      <nav>
+        <a href="index.html">Início</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a class="active" href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+    </aside>
+    <main class="content">
+      <section class="card intro">
+        <span class="eyebrow alt">Instituição</span>
+        <h2>O CEACA e o CEDOC.</h2>
+        <p>Uma leitura direta sobre a missão e a preservação documental.</p>
+        <div class="intro-media intro-media-wide">
+          <img data-random="true" src="assets/images/logo.svg" alt="Logo do CEACA CEDOC">
+          <img data-random="true" src="assets/images/logo-footer.svg" alt="Marca de rodapé do CEACA CEDOC">
+        </div>
+      </section>
+      <section class="split">
+        <article class="card text-card">
+          <h3>O CEACA</h3>
+          <p>O Centro de Estudos e Aplicação da Capoeira é uma associação sem fins lucrativos que promove a Capoeira e a cultura afro-brasileira como um bem a ser compartilhado e investigado.</p>
+          <p>Fundada em 20 de abril de 1988, a instituição atua na preservação das culturas de tradição oral, especialmente a capoeira.</p>
+        </article>
+        <article class="card text-card dark">
+          <h3>O CEDOC</h3>
+          <p>O Centro de Documentação do CEACA preserva um acervo documental relevante, composto por registros, imagens, documentos e objetos do trabalho da associação.</p>
+          <p>Este material organiza a memória da instituição e sustenta pesquisa, difusão e consulta.</p>
+        </article>
+      </section>
+    </main>
+  </div>
   <script src="shared/random-images.js"></script>
 </body>
 </html>

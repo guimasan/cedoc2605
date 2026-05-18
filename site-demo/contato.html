@@ -3,43 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contato - CEACA CEDOC</title>
+  <title>Contato - Versão 2</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body data-image-base="assets/images/">
-  <header class="versions-topbar" aria-label="Navegação entre versões">
-    <a href="versoes/index.html">Hub</a>
-    <a class="active" href="index.html">Versão 1</a>
-    <a href="versoes/versao-2/index.html">Versão 2</a>
-    <a href="versoes/versao-3/index.html">Versão 3</a>
-  </header>
-  <header>
-    <h1>Contato</h1>
-    <nav>
-      <a href="index.html">Início</a>
-      <a href="catalogo.html">Catálogo</a>
-      <a href="sobre.html">Sobre</a>
-      <a href="contato.html">Contato</a>
-      <a href="versoes/index.html">Versões</a>
-    </nav>
-  </header>
-  <main>
-    <section>
-      <div class="random-gallery" aria-label="Imagens de contato">
-        <img data-random="true" src="assets/images/whatsapp-circle.png" alt="Imagem de contato 1">
-        <img data-random="true" src="assets/images/url-circle.png" alt="Imagem de contato 2">
-        <img data-random="true" src="assets/images/section_tabs.png" alt="Imagem de contato 3">
-      </div>
-      <h2>Fale conosco</h2>
-      <p>Para dúvidas, sugestões ou solicitações de conteúdo, entre em contato:</p>
-      <ul>
-        <li>E-mail: <a href="mailto:capoeiraceaca@gmail.com">capoeiraceaca@gmail.com</a></li>
-      </ul>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2026 CEACA CEDOC. E-mail: capoeiraceaca@gmail.com</p>
-  </footer>
+  <div class="layout">
+    <aside class="sidebar card">
+      <span class="eyebrow">Versão 2</span>
+      <h1>Contato.</h1>
+      <p>Canal direto para dúvidas e solicitações.</p>
+      <nav>
+        <a href="index.html">Início</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="sobre.html">Sobre</a>
+        <a class="active" href="contato.html">Contato</a>
+      </nav>
+    </aside>
+    <main class="content">
+      <section class="card intro">
+        <span class="eyebrow alt">Fale conosco</span>
+        <h2>Contato do CEACA CEDOC.</h2>
+        <p>Use o e-mail abaixo para dúvidas, sugestões ou solicitações de conteúdo.</p>
+        <div class="intro-media intro-media-wide">
+          <img data-random="true" src="assets/images/whatsapp-circle.png" alt="Ícone de contato">
+          <img data-random="true" src="assets/images/url-circle.png" alt="Ícone de link">
+        </div>
+      </section>
+      <section class="card contact-box">
+        <p><strong>E-mail:</strong> <a href="mailto:capoeiraceaca@gmail.com">capoeiraceaca@gmail.com</a></p>
+      </section>
+    </main>
+  </div>
   <script src="shared/random-images.js"></script>
 </body>
 </html>

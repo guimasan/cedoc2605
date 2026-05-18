@@ -3,91 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CEACA CEDOC - Demo Local</title>
+  <title>CEACA CEDOC - Versão 2</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body data-image-base="assets/images/">
- 
-  <header class="versions-topbar" aria-label="Navegação entre versões">
-    <a href="versoes/index.html">Hub</a>
-    <a class="active" href="index.html">Versão 1</a>
-    <a href="versoes/versao-2/index.html">Versão 2</a>
-    <a href="versoes/versao-3/index.html">Versão 3</a>
-  </header>
-  <header class="site-header">
-    <div class="brand-block">
-      <span class="eyebrow">CEACA CEDOC</span>
-      <h1>Portal do acervo</h1>
-      <p>Uma navegação com categorias, busca e compartilhamento social para o conteúdo do CEACA.</p>
-    </div>
-    <div class="menu-stack">
-      <nav class="category-nav" aria-label="Categorias do acervo">
-        <a href="sobre.html#ceaca-sobre-nos">CEACA Sobre nós</a>
-        <a href="catalogo.html#educacao">Educação e Cultura Tradicional</a>
-        <a href="catalogo.html#articulacao">Articulação</a>
-        <a href="catalogo.html#saberes">Documentação de Saberes</a>
-        <a href="catalogo.html#manifestacoes">Manifestações culturais</a>
+  <div class="layout">
+    <aside class="sidebar card">
+      <span class="eyebrow">Versão 2</span>
+      <h1>Atlas do acervo.</h1>
+      <p>Uma leitura mais limpa e editorial, com navegação lateral e blocos de conteúdo bem separados.</p>
+      <nav>
+        <a class="active" href="index.html">Início</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
       </nav>
-      <div class="search-row">
-        <form class="search-form" action="catalogo.html" method="get">
-          <label class="sr-only" for="home-search">Buscar no acervo</label>
-          <input id="home-search" name="q" type="search" placeholder="Buscar no acervo">
-          <button type="submit" aria-label="Buscar">⌕</button>
-        </form>
-        <a class="pill-link" href="versoes/index.html">Comparar versões</a>
-      </div>
-    </div>
-  </header>
-  <main>
-    <section>
-      <h2>Bem-vindo ao CEACA CEDOC</h2>
-      <p>O Centro de Estudos e Aplicação da Capoeira (CEACA) é uma associação sem fins lucrativos dedicada à promoção da Capoeira e das culturas tradicionais afro-brasileiras. O CEDOC organiza e preserva um acervo documental rico, estruturado em grandes áreas temáticas:</p>
-      <div class="home-categorias">
-        <div class="cat-box">
-          <h3><a href="sobre.html#ceaca-sobre-nos">CEACA Sobre nós</a></h3>
-          <p>Conheça a trajetória, a missão institucional e o trabalho de memória que sustenta o CEACA.</p>
+    </aside>
+    <main class="content">
+      <section class="hero card">
+        <div>
+          <span class="eyebrow alt">CEACA CEDOC</span>
+          <h2>Uma interface clara para pesquisar, comparar e organizar o acervo.</h2>
+          <p>Este layout prioriza respiração, tipografia forte e blocos com muito respiro para facilitar leitura em desktop e navegação rápida.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="catalogo.html">Explorar catálogo</a>
+            <a class="button" href="sobre.html">Conhecer a história</a>
+          </div>
         </div>
-        <div class="cat-box">
-          <h3><a href="catalogo.html#educacao">Educação e Cultura Tradicional</a></h3>
-          <p>Documentos sobre capoeira e culturas tradicionais como práticas pedagógicas, projetos educacionais, políticas públicas, registros de mestres e tradição oral, e identidade cultural.</p>
+        <div class="hero-visual">
+          <img data-random="true" src="assets/images/capa.png" alt="Imagem de capa do acervo CEACA" class="hero-image">
+          <div class="hero-stats">
+            <div class="stat"><span>01</span><strong>Educação</strong></div>
+            <div class="stat"><span>02</span><strong>CEACA</strong></div>
+            <div class="stat"><span>03</span><strong>Articulação</strong></div>
+            <div class="stat"><span>04</span><strong>Saberes</strong></div>
+          </div>
         </div>
-        <div class="cat-box">
-          <h3><a href="catalogo.html#articulacao">Articulação</a></h3>
-          <p>Redes, parcerias, movimentos e fóruns em que o CEACA atua, incluindo acordos institucionais, participação em redes culturais e articulação com a Ação Griô.</p>
-        </div>
-        <div class="cat-box">
-          <h3><a href="catalogo.html#saberes">Documentação de Saberes</a></h3>
-          <p>Produção acadêmica, projetos de pesquisa, livros, pesquisas de campo e documentação musical sobre capoeira e culturas tradicionais.</p>
-        </div>
-        <div class="cat-box">
-          <h3><a href="catalogo.html#manifestacoes">Manifestações culturais</a></h3>
-          <p>Registros de práticas da capoeira, danças, festas, rituais e apresentações culturais documentadas pelo CEACA e parceiros.</p>
-        </div>
-      </div>
-      <div class="random-gallery" aria-label="Destaques do acervo">
-        <img data-random="true" src="assets/images/capa.png" alt="Destaque do acervo 1">
-        <img data-random="true" src="assets/images/section_default.png" alt="Destaque do acervo 2">
-        <img data-random="true" src="assets/images/section_tabs.png" alt="Destaque do acervo 3">
-      </div>
-      <p style="margin-top:1.5rem;">Explore o <a href="catalogo.html">Catálogo</a> para conhecer todas as categorias e acessar o acervo completo.</p>
-    </section>
-    <section class="share-bar" data-share-bar>
-      <div>
-        <strong>Compartilhar esta página</strong>
-        <span>Leve a navegação do CEACA para suas redes.</span>
-      </div>
-      <div class="share-links">
-        <a data-share-network="whatsapp" target="_blank" rel="noreferrer noopener" href="#">WhatsApp</a>
-        <a data-share-network="facebook" target="_blank" rel="noreferrer noopener" href="#">Facebook</a>
-        <a data-share-network="linkedin" target="_blank" rel="noreferrer noopener" href="#">LinkedIn</a>
-        <a data-share-network="x" target="_blank" rel="noreferrer noopener" href="#">X</a>
-      </div>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2026 CEACA CEDOC. E-mail: capoeiraceaca@gmail.com</p>
-  </footer>
-  <script src="shared/share.js"></script>
+      </section>
+
+      <section class="grid">
+        <a class="panel panel-image" href="catalogo.html#educacao"><img data-random="true" src="assets/images/section_default.png" alt="Categoria Educação e Cultura Tradicional"><strong>Educação e Cultura Tradicional</strong><span>Projetos pedagógicos, políticas públicas e tradição oral.</span></a>
+        <a class="panel panel-image" href="catalogo.html#ceaca"><img data-random="true" src="assets/images/section_tabs.png" alt="Categoria CEACA"><strong>CEACA</strong><span>Memória institucional, Mestre Alcides e formação de aprendizes.</span></a>
+        <a class="panel panel-image" href="catalogo.html#articulacao"><img data-random="true" src="assets/images/section_accordion.png" alt="Categoria Articulação"><strong>Articulação</strong><span>Parcerias, redes de cultura e fóruns.</span></a>
+        <a class="panel panel-image" href="catalogo.html#saberes"><img data-random="true" src="assets/images/logo.svg" alt="Categoria Documentação de Saberes"><strong>Documentação de Saberes</strong><span>Teses, livros, pesquisa de campo e música.</span></a>
+        <a class="panel panel-image" href="catalogo.html#manifestacoes"><img data-random="true" src="assets/images/section_default.png" alt="Categoria Manifestações culturais"><strong>Manifestações culturais</strong><span>Rodas, danças, festas e rituais.</span></a>
+      </section>
+
+      <section class="split">
+        <article class="card text-card">
+          <span class="eyebrow alt">Sobre o CEACA</span>
+          <h3>Associação de base cultural e pedagógica.</h3>
+          <p>O CEACA promove a Capoeira e culturas afro-brasileiras como patrimônio vivo, com foco em formação, memória e compartilhamento.</p>
+        </article>
+        <article class="card text-card dark">
+          <span class="eyebrow alt">Sobre o CEDOC</span>
+          <h3>Centro de documentação e preservação.</h3>
+          <p>O CEDOC organiza registros, imagens, objetos e narrativas para consulta e difusão pública.</p>
+        </article>
+      </section>
+    </main>
+  </div>
   <script src="shared/random-images.js"></script>
 </body>
 </html>
