@@ -13,36 +13,41 @@
         <img src="assets/images/logo.svg" alt="CEACA">
         <span class="brand-text">
           <span class="brand-kicker">CEACA CEDOC</span>
-          <strong>Acervo do Centro de Estudos e Aplicação da Capoeira</strong>
+          <strong>Centro de Estudos e Aplicação da Capoeira</strong>
         </span>
       </a>
-      <nav class="site-nav" aria-label="Categorias do acervo">
+      <nav class="site-nav" aria-label="Navegação principal">
         <a href="sobre.html">Sobre nós</a>
-        <a href="catalogo.html">Acervo</a>
+        <a class="active" href="catalogo.html">Acervo</a>
         <a href="contato.html">Contato</a>
         <a href="contato.html#redes-sociais">Redes Sociais</a>
       </nav>
-      <form class="header-search" action="catalogo.html" method="get">
-        <label class="sr-only" for="search-catalogo">Buscar</label>
-        <input id="search-catalogo" name="q" type="search" placeholder="Buscar">
-        <button type="submit" aria-label="Buscar">search</button>
+      <form class="searchbar" action="catalogo.html" method="get">
+        <label class="sr-only" for="search-catalogo">Buscar no acervo</label>
+        <input id="search-catalogo" name="q" type="search" placeholder="Buscar no acervo">
+        <button type="submit" aria-label="Buscar">🔍</button>
       </form>
     </header>
   </div>
 
   <main class="site-shell">
     <section class="section-card">
-      <span class="section-kicker">Acervo CEDOC</span>
-      <h2>Galeria do acervo digitalizado.</h2>
-      <p>Clique em uma categoria ou item para navegar pelos conteúdos organizados do CEACA.</p>
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">acervo</span>
+          <h2>Busca, categorias e solicitação de conteúdo.</h2>
+        </div>
+        <a class="button secondary" href="contato.html">Solicitar conteúdo</a>
+      </div>
+      <p>Use este catálogo para navegar pelos blocos principais do projeto, como história CEACA, propósito e valores, publicações, projetos e gestão atual.</p>
 
-      <div class="category-grid" style="margin-top:24px;">
+      <div class="category-grid">
         <article class="category-card" id="ceaca">
           <a href="#ceaca-itens">
             <div class="category-card__media" style="background-image:url('assets/images/capa.png')"></div>
             <div class="category-card__body">
               <h3>CEACA</h3>
-              <p>Conteúdo relacionado ao Centro de Estudos e Aplicação da Capoeira</p>
+              <p>Conteúdo relacionado ao Centro de Estudos e Aplicação da Capoeira.</p>
               <span class="category-card__cta">Explorar categoria</span>
             </div>
           </a>
@@ -52,7 +57,7 @@
             <div class="category-card__media" style="background-image:url('assets/images/section_default.png')"></div>
             <div class="category-card__body">
               <h3>Educação e Cultura Tradicional</h3>
-              <p>Projetos educacionais, políticas públicas e tradição oral</p>
+              <p>Projetos pedagógicos, políticas públicas e tradição oral.</p>
               <span class="category-card__cta">Explorar categoria</span>
             </div>
           </a>
@@ -62,7 +67,7 @@
             <div class="category-card__media" style="background-image:url('assets/images/section_tabs.png')"></div>
             <div class="category-card__body">
               <h3>Articulação</h3>
-              <p>Redes, parcerias e atuação institucional</p>
+              <p>Parcerias, redes de cultura e atuação institucional.</p>
               <span class="category-card__cta">Explorar categoria</span>
             </div>
           </a>
@@ -72,7 +77,7 @@
             <div class="category-card__media" style="background-image:url('assets/images/section_accordion.png')"></div>
             <div class="category-card__body">
               <h3>Documentação de Saberes</h3>
-              <p>Pesquisas, livros, projetos e estudos de campo</p>
+              <p>Pesquisas, livros, projetos e estudos de campo.</p>
               <span class="category-card__cta">Explorar categoria</span>
             </div>
           </a>
@@ -82,7 +87,7 @@
             <div class="category-card__media" style="background-image:url('assets/images/logo-footer.svg')"></div>
             <div class="category-card__body">
               <h3>Manifestações culturais</h3>
-              <p>Danças, festas, cortejos e apresentações</p>
+              <p>Danças, festas, cortejos e apresentações.</p>
               <span class="category-card__cta">Explorar categoria</span>
             </div>
           </a>
@@ -91,57 +96,52 @@
     </section>
 
     <section class="section-card" id="ceaca-itens">
-      <span class="section-kicker">CEACA</span>
-      <h2>Categoria CEACA</h2>
-      <p>Conteúdo relacionado ao Centro de Estudos e Aplicação da Capoeira</p>
+      <div class="section-heading"><div><span class="section-kicker">CEACA</span><h2>História e memória institucional.</h2></div></div>
       <div class="gallery-grid">
-        <a class="gallery-card" href="index.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/capa.png" alt="CEACA item 1"></div><div class="gallery-card__body"><h6>Data: 30/06/2022</h6><p>Conteúdo de demonstração</p></div></a>
-        <a class="gallery-card" href="index.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/section_tabs.png" alt="CEACA item 2"></div><div class="gallery-card__body"><h6>Data: 30/06/2022</h6><p>Conteúdo de demonstração</p></div></a>
-        <a class="gallery-card" href="index.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/section_accordion.png" alt="CEACA item 3"></div><div class="gallery-card__body"><h6>Data: 30/06/2022</h6><p>Conteúdo de demonstração</p></div></a>
+        <a class="gallery-card" href="sobre.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/capa.png" alt="CEACA item 1"></div><div class="gallery-card__body"><h3>Data: 30/06/2022</h3><p>Memória institucional</p></div></a>
+        <a class="gallery-card" href="sobre.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/section_tabs.png" alt="CEACA item 2"></div><div class="gallery-card__body"><h3>Data: 30/06/2022</h3><p>Trajetória CEACA</p></div></a>
+        <a class="gallery-card" href="sobre.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/section_accordion.png" alt="CEACA item 3"></div><div class="gallery-card__body"><h3>Data: 30/06/2022</h3><p>Mestre Alcides</p></div></a>
+        <a class="gallery-card" href="sobre.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/logo.svg" alt="CEACA item 4"></div><div class="gallery-card__body"><h3>Data: 30/06/2022</h3><p>Marca e identidade</p></div></a>
       </div>
     </section>
 
     <section class="section-card" id="educacao-itens">
-      <span class="section-kicker">Educação e Cultura Tradicional</span>
-      <h2>Projetos educacionais</h2>
-      <p>Projetos pedagógicos, políticas públicas e tradição oral.</p>
+      <div class="section-heading"><div><span class="section-kicker">Educação e Cultura Tradicional</span><h2>Projetos pedagógicos e tradição oral.</h2></div></div>
       <div class="gallery-grid">
-        <a class="gallery-card" href="index.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/section_default.png" alt="Educação item 1"></div><div class="gallery-card__body"><h6>Data: 30/06/2022</h6><p>Conteúdo de demonstração</p></div></a>
-        <a class="gallery-card" href="index.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/logo.svg" alt="Educação item 2"></div><div class="gallery-card__body"><h6>Data: 30/06/2022</h6><p>Conteúdo de demonstração</p></div></a>
-        <a class="gallery-card" href="index.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/logo-footer.svg" alt="Educação item 3"></div><div class="gallery-card__body"><h6>Data: 30/06/2022</h6><p>Conteúdo de demonstração</p></div></a>
+        <a class="gallery-card" href="sobre.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/section_default.png" alt="Educação item 1"></div><div class="gallery-card__body"><h3>Data: 30/06/2022</h3><p>Projetos pedagógicos</p></div></a>
+        <a class="gallery-card" href="sobre.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/logo-footer.svg" alt="Educação item 2"></div><div class="gallery-card__body"><h3>Data: 30/06/2022</h3><p>Políticas públicas</p></div></a>
+        <a class="gallery-card" href="sobre.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/capa.png" alt="Educação item 3"></div><div class="gallery-card__body"><h3>Data: 30/06/2022</h3><p>Tradição oral</p></div></a>
+        <a class="gallery-card" href="sobre.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/section_tabs.png" alt="Educação item 4"></div><div class="gallery-card__body"><h3>Data: 30/06/2022</h3><p>Identidade cultural</p></div></a>
       </div>
     </section>
 
     <section class="section-card" id="articulacao-itens">
-      <span class="section-kicker">Articulação</span>
-      <h2>Parcerias e redes</h2>
-      <p>Parcerias, redes de cultura e projetos de articulação institucional.</p>
+      <div class="section-heading"><div><span class="section-kicker">Articulação</span><h2>Parcerias, redes e atuação institucional.</h2></div></div>
       <div class="gallery-grid">
-        <a class="gallery-card" href="index.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/section_tabs.png" alt="Articulação item 1"></div><div class="gallery-card__body"><h6>Data: 30/06/2022</h6><p>Conteúdo de demonstração</p></div></a>
-        <a class="gallery-card" href="index.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/capa.png" alt="Articulação item 2"></div><div class="gallery-card__body"><h6>Data: 30/06/2022</h6><p>Conteúdo de demonstração</p></div></a>
-        <a class="gallery-card" href="index.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/section_accordion.png" alt="Articulação item 3"></div><div class="gallery-card__body"><h6>Data: 30/06/2022</h6><p>Conteúdo de demonstração</p></div></a>
+        <a class="gallery-card" href="contato.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/section_tabs.png" alt="Articulação item 1"></div><div class="gallery-card__body"><h3>Data: 30/06/2022</h3><p>Parcerias</p></div></a>
+        <a class="gallery-card" href="contato.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/capa.png" alt="Articulação item 2"></div><div class="gallery-card__body"><h3>Data: 30/06/2022</h3><p>Redes de cultura</p></div></a>
+        <a class="gallery-card" href="contato.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/section_accordion.png" alt="Articulação item 3"></div><div class="gallery-card__body"><h3>Data: 30/06/2022</h3><p>Fóruns e articulação</p></div></a>
+        <a class="gallery-card" href="contato.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/logo.svg" alt="Articulação item 4"></div><div class="gallery-card__body"><h3>Data: 30/06/2022</h3><p>Contribua</p></div></a>
       </div>
     </section>
 
     <section class="section-card" id="saberes-itens">
-      <span class="section-kicker">Documentação de Saberes</span>
-      <h2>Pesquisas e documentação</h2>
-      <p>Pesquisas, livros, projetos e estudos de campo.</p>
+      <div class="section-heading"><div><span class="section-kicker">Documentação de Saberes</span><h2>Pesquisas, livros e estudos de campo.</h2></div></div>
       <div class="gallery-grid">
-        <a class="gallery-card" href="index.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/logo.svg" alt="Saberes item 1"></div><div class="gallery-card__body"><h6>Data: 30/06/2022</h6><p>Conteúdo de demonstração</p></div></a>
-        <a class="gallery-card" href="index.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/section_default.png" alt="Saberes item 2"></div><div class="gallery-card__body"><h6>Data: 30/06/2022</h6><p>Conteúdo de demonstração</p></div></a>
-        <a class="gallery-card" href="index.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/section_tabs.png" alt="Saberes item 3"></div><div class="gallery-card__body"><h6>Data: 30/06/2022</h6><p>Conteúdo de demonstração</p></div></a>
+        <a class="gallery-card" href="index.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/logo.svg" alt="Saberes item 1"></div><div class="gallery-card__body"><h3>Data: 30/06/2022</h3><p>Livros e capítulos</p></div></a>
+        <a class="gallery-card" href="index.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/section_default.png" alt="Saberes item 2"></div><div class="gallery-card__body"><h3>Data: 30/06/2022</h3><p>Teses e dissertações</p></div></a>
+        <a class="gallery-card" href="index.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/section_tabs.png" alt="Saberes item 3"></div><div class="gallery-card__body"><h3>Data: 30/06/2022</h3><p>Projetos e pesquisa</p></div></a>
+        <a class="gallery-card" href="index.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/section_accordion.png" alt="Saberes item 4"></div><div class="gallery-card__body"><h3>Data: 30/06/2022</h3><p>Musicalidade</p></div></a>
       </div>
     </section>
 
     <section class="section-card" id="manifestacoes-itens">
-      <span class="section-kicker">Manifestações culturais</span>
-      <h2>Rodas, festas e apresentações</h2>
-      <p>Danças, festas, cortejos e apresentações documentadas pelo CEACA e parceiros.</p>
+      <div class="section-heading"><div><span class="section-kicker">Manifestações culturais</span><h2>Rodas, festas, cortejos e apresentações.</h2></div></div>
       <div class="gallery-grid">
-        <a class="gallery-card" href="index.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/section_accordion.png" alt="Manifestações item 1"></div><div class="gallery-card__body"><h6>Data: 30/06/2022</h6><p>Conteúdo de demonstração</p></div></a>
-        <a class="gallery-card" href="index.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/logo-footer.svg" alt="Manifestações item 2"></div><div class="gallery-card__body"><h6>Data: 30/06/2022</h6><p>Conteúdo de demonstração</p></div></a>
-        <a class="gallery-card" href="index.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/capa.png" alt="Manifestações item 3"></div><div class="gallery-card__body"><h6>Data: 30/06/2022</h6><p>Conteúdo de demonstração</p></div></a>
+        <a class="gallery-card" href="index.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/section_accordion.png" alt="Manifestações item 1"></div><div class="gallery-card__body"><h3>Data: 30/06/2022</h3><p>Rodas e apresentações</p></div></a>
+        <a class="gallery-card" href="index.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/logo-footer.svg" alt="Manifestações item 2"></div><div class="gallery-card__body"><h3>Data: 30/06/2022</h3><p>Festas e rituais</p></div></a>
+        <a class="gallery-card" href="index.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/capa.png" alt="Manifestações item 3"></div><div class="gallery-card__body"><h3>Data: 30/06/2022</h3><p>Danças e corporalidades</p></div></a>
+        <a class="gallery-card" href="index.html"><div class="gallery-card__thumb"><img data-random="true" src="assets/images/url-circle.png" alt="Manifestações item 4"></div><div class="gallery-card__body"><h3>Data: 30/06/2022</h3><p>Atalho de rede</p></div></a>
       </div>
     </section>
   </main>
