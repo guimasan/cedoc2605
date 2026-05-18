@@ -3,37 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contato - Versão 2</title>
+  <title>Contato - CEACA CEDOC</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body data-image-base="assets/images/">
-  <div class="layout">
-    <aside class="sidebar card">
-      <span class="eyebrow">Versão 2</span>
-      <h1>Contato.</h1>
-      <p>Canal direto para dúvidas e solicitações.</p>
-      <nav>
-        <a href="index.html">Início</a>
-        <a href="catalogo.html">Catálogo</a>
-        <a href="sobre.html">Sobre</a>
-        <a class="active" href="contato.html">Contato</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Ir para a página inicial">
+        <img src="assets/images/logo.svg" alt="CEACA">
+        <span class="brand-text">
+          <span class="brand-kicker">CEACA CEDOC</span>
+          <strong>Acervo do Centro de Estudos e Aplicação da Capoeira</strong>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Categorias do acervo">
+        <a href="sobre.html">Sobre nós</a>
+        <a href="catalogo.html">Acervo</a>
+        <a href="contato.html">Contato</a>
+        <a href="#redes-sociais">Redes Sociais</a>
       </nav>
-    </aside>
-    <main class="content">
-      <section class="card intro">
-        <span class="eyebrow alt">Fale conosco</span>
-        <h2>Contato do CEACA CEDOC.</h2>
-        <p>Use o e-mail abaixo para dúvidas, sugestões ou solicitações de conteúdo.</p>
-        <div class="intro-media intro-media-wide">
-          <img data-random="true" src="assets/images/whatsapp-circle.png" alt="Ícone de contato">
-          <img data-random="true" src="assets/images/url-circle.png" alt="Ícone de link">
-        </div>
-      </section>
-      <section class="card contact-box">
-        <p><strong>E-mail:</strong> <a href="mailto:capoeiraceaca@gmail.com">capoeiraceaca@gmail.com</a></p>
-      </section>
-    </main>
+      <form class="header-search" action="catalogo.html" method="get">
+        <label class="sr-only" for="search-contato">Buscar</label>
+        <input id="search-contato" name="q" type="search" placeholder="Buscar">
+        <button type="submit" aria-label="Buscar">search</button>
+      </form>
+    </header>
   </div>
+
+  <main class="site-shell">
+    <section class="contact-card">
+      <span class="card-kicker">Contato</span>
+      <h2>Fale conosco</h2>
+      <p>Para dúvidas, sugestões ou solicitações de conteúdo, entre em contato pelo e-mail abaixo.</p>
+      <p><strong>E-mail:</strong> <a href="mailto:capoeiraceaca@gmail.com">capoeiraceaca@gmail.com</a></p>
+
+      <div id="redes-sociais" class="contact-links">
+        <a href="mailto:capoeiraceaca@gmail.com">E-mail</a>
+        <a href="https://wa.me/?text=CEACA%20CEDOC" target="_blank" rel="noreferrer noopener">WhatsApp</a>
+        <a href="https://www.facebook.com" target="_blank" rel="noreferrer noopener">Facebook</a>
+        <a href="https://www.instagram.com" target="_blank" rel="noreferrer noopener">Instagram</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-shell">
+    <div class="footer">
+      <p>© 2026 CEACA CEDOC. E-mail: capoeiraceaca@gmail.com</p>
+    </div>
+  </footer>
+
   <script src="shared/random-images.js"></script>
 </body>
 </html>

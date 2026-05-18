@@ -3,46 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre - Versão 2</title>
+  <title>Sobre - CEACA CEDOC</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body data-image-base="assets/images/">
-  <div class="layout">
-    <aside class="sidebar card">
-      <span class="eyebrow">Versão 2</span>
-      <h1>Sobre.</h1>
-      <p>Contexto institucional com foco editorial e visual limpo.</p>
-      <nav>
-        <a href="index.html">Início</a>
-        <a href="catalogo.html">Catálogo</a>
-        <a class="active" href="sobre.html">Sobre</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Ir para a página inicial">
+        <img src="assets/images/logo.svg" alt="CEACA">
+        <span class="brand-text">
+          <span class="brand-kicker">CEACA CEDOC</span>
+          <strong>Acervo do Centro de Estudos e Aplicação da Capoeira</strong>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Categorias do acervo">
+        <a href="sobre.html">Sobre nós</a>
+        <a href="catalogo.html">Acervo</a>
         <a href="contato.html">Contato</a>
+        <a href="contato.html#redes-sociais">Redes Sociais</a>
       </nav>
-    </aside>
-    <main class="content">
-      <section class="card intro">
-        <span class="eyebrow alt">Instituição</span>
-        <h2>O CEACA e o CEDOC.</h2>
-        <p>Uma leitura direta sobre a missão e a preservação documental.</p>
-        <div class="intro-media intro-media-wide">
-          <img data-random="true" src="assets/images/logo.svg" alt="Logo do CEACA CEDOC">
-          <img data-random="true" src="assets/images/logo-footer.svg" alt="Marca de rodapé do CEACA CEDOC">
-        </div>
-      </section>
-      <section class="split">
-        <article class="card text-card">
-          <h3>O CEACA</h3>
-          <p>O Centro de Estudos e Aplicação da Capoeira é uma associação sem fins lucrativos que promove a Capoeira e a cultura afro-brasileira como um bem a ser compartilhado e investigado.</p>
-          <p>Fundada em 20 de abril de 1988, a instituição atua na preservação das culturas de tradição oral, especialmente a capoeira.</p>
-        </article>
-        <article class="card text-card dark">
-          <h3>O CEDOC</h3>
-          <p>O Centro de Documentação do CEACA preserva um acervo documental relevante, composto por registros, imagens, documentos e objetos do trabalho da associação.</p>
-          <p>Este material organiza a memória da instituição e sustenta pesquisa, difusão e consulta.</p>
-        </article>
-      </section>
-    </main>
+      <form class="header-search" action="catalogo.html" method="get">
+        <label class="sr-only" for="search-sobre">Buscar</label>
+        <input id="search-sobre" name="q" type="search" placeholder="Buscar">
+        <button type="submit" aria-label="Buscar">search</button>
+      </form>
+    </header>
   </div>
+
+  <main class="site-shell">
+    <section class="about-card">
+      <span class="card-kicker">Sobre nós</span>
+      <h2>O CEACA e o CEDOC</h2>
+      <p>O Centro de Estudos e Aplicação da Capoeira (CEACA) é uma associação sem fins lucrativos que promove a Capoeira e a cultura afro-brasileira como um bem que deve ser compartilhado e investigado. Tem como missão preservar e promover as culturas de tradição oral, em especial a capoeira, compartilhando dos seus benefícios sociais para a formação de seres humanos integrados com a sua realidade.</p>
+      <p>O Centro de Documentação do CEACA tem sob sua responsabilidade um robusto acervo documental que merece ser preservado e divulgado. As coleções reúnem registros de atividades desenvolvidas pela associação, como formação de capoeiristas, apresentações culturais, imagens, documentos e objetos do trabalho realizado ao longo dos anos.</p>
+      <div class="split-grid">
+        <article class="about-card">
+          <span class="card-kicker">CEACA</span>
+          <h2>Instituição</h2>
+          <p>Fundada em 20 de abril de 1988, registrada com CNPJ 06.116.648/0001-04 (02.02.2004).</p>
+        </article>
+        <article class="about-card">
+          <span class="card-kicker">CEDOC</span>
+          <h2>Documentação</h2>
+          <p>Organização, preservação e difusão pública do acervo para pesquisa e consulta.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-shell">
+    <div class="footer">
+      <p>© 2026 CEACA CEDOC. E-mail: capoeiraceaca@gmail.com</p>
+    </div>
+  </footer>
+
   <script src="shared/random-images.js"></script>
 </body>
 </html>

@@ -3,66 +3,262 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CEACA CEDOC - Versão 2</title>
+  <title>CEACA CEDOC</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body data-image-base="assets/images/">
-  <div class="layout">
-    <aside class="sidebar card">
-      <span class="eyebrow">Versão 2</span>
-      <h1>Atlas do acervo.</h1>
-      <p>Uma leitura mais limpa e editorial, com navegação lateral e blocos de conteúdo bem separados.</p>
-      <nav>
-        <a class="active" href="index.html">Início</a>
-        <a href="catalogo.html">Catálogo</a>
-        <a href="sobre.html">Sobre</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Ir para a página inicial">
+        <img src="assets/images/logo.svg" alt="CEACA">
+        <span class="brand-text">
+          <span class="brand-kicker">CEACA CEDOC</span>
+          <strong>Acervo do Centro de Estudos e Aplicação da Capoeira</strong>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Categorias do acervo">
+        <a href="sobre.html">Sobre nós</a>
+        <a href="catalogo.html">Acervo</a>
         <a href="contato.html">Contato</a>
+        <a href="contato.html#redes-sociais">Redes Sociais</a>
       </nav>
-    </aside>
-    <main class="content">
-      <section class="hero card">
-        <div>
-          <span class="eyebrow alt">CEACA CEDOC</span>
-          <h2>Uma interface clara para pesquisar, comparar e organizar o acervo.</h2>
-          <p>Este layout prioriza respiração, tipografia forte e blocos com muito respiro para facilitar leitura em desktop e navegação rápida.</p>
-          <div class="hero-actions">
-            <a class="button primary" href="catalogo.html">Explorar catálogo</a>
-            <a class="button" href="sobre.html">Conhecer a história</a>
-          </div>
-        </div>
-        <div class="hero-visual">
-          <img data-random="true" src="assets/images/capa.png" alt="Imagem de capa do acervo CEACA" class="hero-image">
-          <div class="hero-stats">
-            <div class="stat"><span>01</span><strong>Educação</strong></div>
-            <div class="stat"><span>02</span><strong>CEACA</strong></div>
-            <div class="stat"><span>03</span><strong>Articulação</strong></div>
-            <div class="stat"><span>04</span><strong>Saberes</strong></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="grid">
-        <a class="panel panel-image" href="catalogo.html#educacao"><img data-random="true" src="assets/images/section_default.png" alt="Categoria Educação e Cultura Tradicional"><strong>Educação e Cultura Tradicional</strong><span>Projetos pedagógicos, políticas públicas e tradição oral.</span></a>
-        <a class="panel panel-image" href="catalogo.html#ceaca"><img data-random="true" src="assets/images/section_tabs.png" alt="Categoria CEACA"><strong>CEACA</strong><span>Memória institucional, Mestre Alcides e formação de aprendizes.</span></a>
-        <a class="panel panel-image" href="catalogo.html#articulacao"><img data-random="true" src="assets/images/section_accordion.png" alt="Categoria Articulação"><strong>Articulação</strong><span>Parcerias, redes de cultura e fóruns.</span></a>
-        <a class="panel panel-image" href="catalogo.html#saberes"><img data-random="true" src="assets/images/logo.svg" alt="Categoria Documentação de Saberes"><strong>Documentação de Saberes</strong><span>Teses, livros, pesquisa de campo e música.</span></a>
-        <a class="panel panel-image" href="catalogo.html#manifestacoes"><img data-random="true" src="assets/images/section_default.png" alt="Categoria Manifestações culturais"><strong>Manifestações culturais</strong><span>Rodas, danças, festas e rituais.</span></a>
-      </section>
-
-      <section class="split">
-        <article class="card text-card">
-          <span class="eyebrow alt">Sobre o CEACA</span>
-          <h3>Associação de base cultural e pedagógica.</h3>
-          <p>O CEACA promove a Capoeira e culturas afro-brasileiras como patrimônio vivo, com foco em formação, memória e compartilhamento.</p>
-        </article>
-        <article class="card text-card dark">
-          <span class="eyebrow alt">Sobre o CEDOC</span>
-          <h3>Centro de documentação e preservação.</h3>
-          <p>O CEDOC organiza registros, imagens, objetos e narrativas para consulta e difusão pública.</p>
-        </article>
-      </section>
-    </main>
+      <form class="header-search" action="catalogo.html" method="get">
+        <label class="sr-only" for="search-home">Buscar</label>
+        <input id="search-home" name="q" type="search" placeholder="Buscar">
+        <button type="submit" aria-label="Buscar">search</button>
+      </form>
+    </header>
   </div>
+
+  <main>
+    <section class="site-shell">
+      <div class="hero-carousel" data-carousel>
+        <div class="hero-stage">
+          <article class="hero-slide active">
+            <div class="hero-slide__media"><img data-random="true" src="assets/images/capa.png" alt="CEACA"></div>
+            <div class="hero-slide__copy">
+              <span class="hero-kicker">CEACA</span>
+              <h2>CEACA</h2>
+              <p>Conteúdo relacionado ao Centro de Estudos e Aplicação da Capoeira</p>
+              <div class="hero-actions">
+                <a class="button primary" href="catalogo.html#ceaca">Explorar</a>
+                <a class="button secondary" href="sobre.html">Sobre nós</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="hero-slide">
+            <div class="hero-slide__media"><img data-random="true" src="assets/images/section_default.png" alt="Educação e Cultura Tradicional"></div>
+            <div class="hero-slide__copy">
+              <span class="hero-kicker">Educação e Cultura Tradicional</span>
+              <h2>Educação e Cultura Tradicional</h2>
+              <p>Projetos pedagógicos, políticas públicas e tradição oral</p>
+              <div class="hero-actions">
+                <a class="button primary" href="catalogo.html#educacao">Explorar</a>
+                <a class="button secondary" href="catalogo.html">Acervo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="hero-slide">
+            <div class="hero-slide__media"><img data-random="true" src="assets/images/section_tabs.png" alt="Articulação"></div>
+            <div class="hero-slide__copy">
+              <span class="hero-kicker">Articulação</span>
+              <h2>Articulação</h2>
+              <p>Parcerias, redes de cultura e fóruns</p>
+              <div class="hero-actions">
+                <a class="button primary" href="catalogo.html#articulacao">Explorar</a>
+                <a class="button secondary" href="contato.html">Contato</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="hero-slide">
+            <div class="hero-slide__media"><img data-random="true" src="assets/images/section_accordion.png" alt="Documentação de Saberes"></div>
+            <div class="hero-slide__copy">
+              <span class="hero-kicker">Documentação de Saberes</span>
+              <h2>Documentação de Saberes</h2>
+              <p>Pesquisas, livros, projetos e estudos de campo</p>
+              <div class="hero-actions">
+                <a class="button primary" href="catalogo.html#saberes">Explorar</a>
+                <a class="button secondary" href="catalogo.html">Ver catálogo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="hero-slide">
+            <div class="hero-slide__media"><img data-random="true" src="assets/images/logo-footer.svg" alt="Manifestações culturais"></div>
+            <div class="hero-slide__copy">
+              <span class="hero-kicker">Manifestações culturais</span>
+              <h2>Manifestações culturais</h2>
+              <p>Danças, festas, cortejos e apresentações</p>
+              <div class="hero-actions">
+                <a class="button primary" href="catalogo.html#manifestacoes">Explorar</a>
+                <a class="button secondary" href="sobre.html">Sobre o CEDOC</a>
+              </div>
+            </div>
+          </article>
+
+          <div class="carousel-controls">
+            <button type="button" data-carousel-prev aria-label="Previous">Previous</button>
+            <button type="button" data-carousel-next aria-label="Next">Next</button>
+          </div>
+        </div>
+      </div>
+
+      <section class="section-card">
+        <span class="section-kicker">Categorias do Acervo</span>
+        <h2>Prévia com imagens reais de cada categoria.</h2>
+        <div class="category-grid">
+          <article class="category-card" id="cedoc-category-ceaca">
+            <a href="catalogo.html#ceaca">
+              <div class="category-card__media" style="background-image:url('assets/images/capa.png')"></div>
+              <div class="category-card__body">
+                <h3>CEACA</h3>
+                <p>Conteúdo relacionado ao Centro de Estudos e Aplicação da Capoeira</p>
+                <span class="category-card__cta">Explorar categoria</span>
+              </div>
+            </a>
+          </article>
+          <article class="category-card">
+            <a href="catalogo.html#educacao">
+              <div class="category-card__media" style="background-image:url('assets/images/section_default.png')"></div>
+              <div class="category-card__body">
+                <h3>Educação e Cultura Tradicional</h3>
+                <p>Projetos pedagógicos, políticas públicas e tradição oral</p>
+                <span class="category-card__cta">Explorar categoria</span>
+              </div>
+            </a>
+          </article>
+          <article class="category-card">
+            <a href="catalogo.html#articulacao">
+              <div class="category-card__media" style="background-image:url('assets/images/section_tabs.png')"></div>
+              <div class="category-card__body">
+                <h3>Articulação</h3>
+                <p>Parcerias, redes de cultura e projetos de articulação institucional</p>
+                <span class="category-card__cta">Explorar categoria</span>
+              </div>
+            </a>
+          </article>
+          <article class="category-card">
+            <a href="catalogo.html#saberes">
+              <div class="category-card__media" style="background-image:url('assets/images/section_accordion.png')"></div>
+              <div class="category-card__body">
+                <h3>Documentação de Saberes</h3>
+                <p>Pesquisas, livros, projetos e estudos de campo</p>
+                <span class="category-card__cta">Explorar categoria</span>
+              </div>
+            </a>
+          </article>
+          <article class="category-card">
+            <a href="catalogo.html#manifestacoes">
+              <div class="category-card__media" style="background-image:url('assets/images/logo-footer.svg')"></div>
+              <div class="category-card__body">
+                <h3>Manifestações Culturais</h3>
+                <p>Danças, festas, cortejos e apresentações</p>
+                <span class="category-card__cta">Explorar categoria</span>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-card">
+        <span class="section-kicker">Destaques do acervo</span>
+        <h2>Itens recentes e representativos.</h2>
+        <div class="gallery-grid">
+          <a class="gallery-card" href="catalogo.html">
+            <div class="gallery-card__thumb"><img data-random="true" src="assets/images/capa.png" alt="Destaque do acervo 1"></div>
+            <div class="gallery-card__body"><h6>Data: 30/06/2022</h6><p>Item de demonstração</p></div>
+          </a>
+          <a class="gallery-card" href="catalogo.html">
+            <div class="gallery-card__thumb"><img data-random="true" src="assets/images/section_default.png" alt="Destaque do acervo 2"></div>
+            <div class="gallery-card__body"><h6>Data: 30/06/2022</h6><p>Item de demonstração</p></div>
+          </a>
+          <a class="gallery-card" href="catalogo.html">
+            <div class="gallery-card__thumb"><img data-random="true" src="assets/images/section_tabs.png" alt="Destaque do acervo 3"></div>
+            <div class="gallery-card__body"><h6>Data: 30/06/2022</h6><p>Item de demonstração</p></div>
+          </a>
+          <a class="gallery-card" href="catalogo.html">
+            <div class="gallery-card__thumb"><img data-random="true" src="assets/images/section_accordion.png" alt="Destaque do acervo 4"></div>
+            <div class="gallery-card__body"><h6>Data: 30/06/2022</h6><p>Item de demonstração</p></div>
+          </a>
+          <a class="gallery-card" href="catalogo.html">
+            <div class="gallery-card__thumb"><img data-random="true" src="assets/images/logo.svg" alt="Destaque do acervo 5"></div>
+            <div class="gallery-card__body"><h6>Data: 30/06/2022</h6><p>Item de demonstração</p></div>
+          </a>
+          <a class="gallery-card" href="catalogo.html">
+            <div class="gallery-card__thumb"><img data-random="true" src="assets/images/logo-footer.svg" alt="Destaque do acervo 6"></div>
+            <div class="gallery-card__body"><h6>Data: 30/06/2022</h6><p>Item de demonstração</p></div>
+          </a>
+          <a class="gallery-card" href="catalogo.html">
+            <div class="gallery-card__thumb"><img data-random="true" src="assets/images/capa.png" alt="Destaque do acervo 7"></div>
+            <div class="gallery-card__body"><h6>Data: 30/06/2022</h6><p>Item de demonstração</p></div>
+          </a>
+          <a class="gallery-card" href="catalogo.html">
+            <div class="gallery-card__thumb"><img data-random="true" src="assets/images/section_default.png" alt="Destaque do acervo 8"></div>
+            <div class="gallery-card__body"><h6>Data: 30/06/2022</h6><p>Item de demonstração</p></div>
+          </a>
+          <a class="gallery-card" href="catalogo.html">
+            <div class="gallery-card__thumb"><img data-random="true" src="assets/images/section_tabs.png" alt="Destaque do acervo 9"></div>
+            <div class="gallery-card__body"><h6>Data: 30/06/2022</h6><p>Item de demonstração</p></div>
+          </a>
+          <a class="gallery-card" href="catalogo.html">
+            <div class="gallery-card__thumb"><img data-random="true" src="assets/images/section_accordion.png" alt="Destaque do acervo 10"></div>
+            <div class="gallery-card__body"><h6>Data: 30/06/2022</h6><p>Item de demonstração</p></div>
+          </a>
+          <a class="gallery-card" href="catalogo.html">
+            <div class="gallery-card__thumb"><img data-random="true" src="assets/images/logo.svg" alt="Destaque do acervo 11"></div>
+            <div class="gallery-card__body"><h6>Data: 30/06/2022</h6><p>Item de demonstração</p></div>
+          </a>
+          <a class="gallery-card" href="catalogo.html">
+            <div class="gallery-card__thumb"><img data-random="true" src="assets/images/logo-footer.svg" alt="Destaque do acervo 12"></div>
+            <div class="gallery-card__body"><h6>Data: 30/06/2022</h6><p>Item de demonstração</p></div>
+          </a>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer-shell">
+    <div class="footer">
+      <div class="footer-share">
+        <div>
+          <strong>Compartilhar esta página</strong>
+          <span>Leve a navegação do CEACA para suas redes.</span>
+        </div>
+        <div class="contact-links">
+          <a data-share-network="whatsapp" target="_blank" rel="noreferrer noopener" href="#">WhatsApp</a>
+          <a data-share-network="facebook" target="_blank" rel="noreferrer noopener" href="#">Facebook</a>
+          <a data-share-network="linkedin" target="_blank" rel="noreferrer noopener" href="#">LinkedIn</a>
+          <a data-share-network="x" target="_blank" rel="noreferrer noopener" href="#">X</a>
+        </div>
+      </div>
+      <p>© 2026 CEACA CEDOC. E-mail: capoeiraceaca@gmail.com</p>
+    </div>
+  </footer>
+
+  <script src="shared/share.js"></script>
   <script src="shared/random-images.js"></script>
+  <script>
+    (function () {
+      const slides = Array.from(document.querySelectorAll('[data-carousel] .hero-slide'));
+      const prev = document.querySelector('[data-carousel-prev]');
+      const next = document.querySelector('[data-carousel-next]');
+      if (!slides.length) return;
+
+      let current = 0;
+
+      function show(index) {
+        slides[current].classList.remove('active');
+        current = (index + slides.length) % slides.length;
+        slides[current].classList.add('active');
+      }
+
+      prev?.addEventListener('click', () => show(current - 1));
+      next?.addEventListener('click', () => show(current + 1));
+      setInterval(() => show(current + 1), 7000);
+    })();
+  </script>
 </body>
 </html>
