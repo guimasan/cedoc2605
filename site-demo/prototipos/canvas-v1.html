@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Canvas - Versão 1</title>
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;margin:0}
+    header{padding:12px 20px;border-bottom:1px solid #eee;display:flex;align-items:center;justify-content:space-between}
+    .layout-switcher a{margin-right:8px;padding:6px 10px;border-radius:6px;background:#173f35;color:#fff;text-decoration:none}
+    nav{display:flex;gap:8px}
+    nav a{padding:8px 12px;background:#f4f4f4;border-radius:8px;text-decoration:none;color:#111}
+    .featured{background:linear-gradient(135deg,#173f35,#9a6a2f);color:#fff}
+  </style>
+</head>
+<body data-image-base="../assets/images/">
+  <header>
+    <div class="layout-switcher">
+      <strong>Versões:</strong>
+      <a href="#">Versão 1</a>
+      <a href="#">Versão 2</a>
+      <a href="#">Versão 3</a>
+    </div>
+    <nav>
+      <a class="featured">CEACA Sobre nós</a>
+      <a>Articulação</a>
+      <a>Documentação de Saberes</a>
+      <a>Educação e Cultura</a>
+      <a>Eventos / Manifestações culturais</a>
+    </nav>
+    <div class="search">
+      <form style="display:flex;align-items:center;gap:6px">
+        <input placeholder="Buscar no acervo" style="padding:8px 10px;border-radius:20px;border:1px solid #ddd" />
+        <button style="padding:8px 10px;border-radius:50%;background:#173f35;color:#fff;border:0">🔍</button>
+      </form>
+    </div>
+  </header>
+  <main style="padding:20px">
+    <h1>Home — Versão 1</h1>
+    <p>Exemplo de navegação e estrutura profissional funcional.</p>
+    <section style="margin-top:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
+      <article style="background:#fff;padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(16,21,34,0.06)">
+        <img data-random="true" src="../assets/images/capa.png" alt="Exemplo" style="width:100%;height:auto;border-radius:8px">
+        <h3 style="margin-top:10px">Destaque 1</h3>
+        <p>Resumo curto e direto com link para o item.</p>
+      </article>
+      <article style="background:#fff;padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(16,21,34,0.06)">
+        <img data-random="true" src="../assets/images/section_default.png" alt="Exemplo" style="width:100%;height:auto;border-radius:8px">
+        <h3 style="margin-top:10px">Destaque 2</h3>
+        <p>Resumo curto e direto com link para o item.</p>
+      </article>
+    </section>
+  </main>
+  <script src="../shared/random-images.js"></script>
+</body>
+</html>

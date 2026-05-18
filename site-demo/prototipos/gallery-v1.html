@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Galeria - Versão 1</title>
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f5f7f6}
+    header{padding:12px 20px;border-bottom:1px solid #eee;display:flex;align-items:center;justify-content:space-between}
+    nav a{margin-right:8px;padding:8px 12px;border-radius:10px;background:#fff;text-decoration:none;color:#111}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;padding:20px;max-width:1200px;margin:18px auto}
+    .card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,0.06)}
+    .card img{width:100%;height:180px;object-fit:cover;display:block}
+    .card .body{padding:12px}
+  </style>
+</head>
+<body data-image-base="../assets/images/">
+  <header>
+    <div><strong>Versão 1</strong></div>
+    <nav>
+      <a class="featured">CEACA Sobre nós</a>
+      <a>Articulação</a>
+      <a>Documentação</a>
+      <a>Educação</a>
+      <a>Eventos</a>
+    </nav>
+    <div>🔍</div>
+  </header>
+  <main>
+    <div class="grid">
+      <template id="tile-template">
+        <svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-label="Placeholder">
+          <defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#f3f4f6"/><stop offset="1" stop-color="#e5e7eb"/></linearGradient></defs>
+          <rect width="640" height="360" fill="url(#g)"/>
+          <circle cx="96" cy="76" r="26" fill="#d1d5db"/>
+          <rect x="60" y="238" width="320" height="24" rx="12" fill="#cbd5e1"/>
+          <rect x="60" y="274" width="220" height="18" rx="9" fill="#e2e8f0"/>
+          <text x="60" y="58" font-size="18" font-family="Arial,Helvetica,sans-serif" fill="#334155">CEACA</text>
+        </svg>
+      </template>
+      <!-- Repeat cards -->
+      <div class="card"><img data-random="true" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='640' height='360' viewBox='0 0 640 360'><defs><linearGradient id='g' x1='0' x2='1' y1='0' y2='1'><stop stop-color='%23f3f4f6'/><stop offset='1' stop-color='%23e5e7eb'/></linearGradient></defs><rect width='640' height='360' fill='url(%23g)'/><circle cx='96' cy='76' r='26' fill='%23d1d5db'/><rect x='60' y='238' width='320' height='24' rx='12' fill='%23cbd5e1'/><rect x='60' y='274' width='220' height='18' rx='9' fill='%23e2e8f0'/><text x='60' y='58' font-size='18' font-family='Arial,Helvetica,sans-serif' fill='%23334155'>Item 1</text></svg>" alt="img"><div class="body"><h4>Item 1</h4><p>Resumo</p></div></div>
+      <div class="card"><img data-random="true" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='640' height='360' viewBox='0 0 640 360'><defs><linearGradient id='g' x1='0' x2='1' y1='0' y2='1'><stop stop-color='%23f3f4f6'/><stop offset='1' stop-color='%23e5e7eb'/></linearGradient></defs><rect width='640' height='360' fill='url(%23g)'/><circle cx='96' cy='76' r='26' fill='%23d1d5db'/><rect x='60' y='238' width='320' height='24' rx='12' fill='%23cbd5e1'/><rect x='60' y='274' width='220' height='18' rx='9' fill='%23e2e8f0'/><text x='60' y='58' font-size='18' font-family='Arial,Helvetica,sans-serif' fill='%23334155'>Item 2</text></svg>" alt="img"><div class="body"><h4>Item 2</h4><p>Resumo</p></div></div>
+      <div class="card"><img data-random="true" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='640' height='360' viewBox='0 0 640 360'><defs><linearGradient id='g' x1='0' x2='1' y1='0' y2='1'><stop stop-color='%23f3f4f6'/><stop offset='1' stop-color='%23e5e7eb'/></linearGradient></defs><rect width='640' height='360' fill='url(%23g)'/><circle cx='96' cy='76' r='26' fill='%23d1d5db'/><rect x='60' y='238' width='320' height='24' rx='12' fill='%23cbd5e1'/><rect x='60' y='274' width='220' height='18' rx='9' fill='%23e2e8f0'/><text x='60' y='58' font-size='18' font-family='Arial,Helvetica,sans-serif' fill='%23334155'>Item 3</text></svg>" alt="img"><div class="body"><h4>Item 3</h4><p>Resumo</p></div></div>
+      <div class="card"><img data-random="true" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='640' height='360' viewBox='0 0 640 360'><defs><linearGradient id='g' x1='0' x2='1' y1='0' y2='1'><stop stop-color='%23f3f4f6'/><stop offset='1' stop-color='%23e5e7eb'/></linearGradient></defs><rect width='640' height='360' fill='url(%23g)'/><circle cx='96' cy='76' r='26' fill='%23d1d5db'/><rect x='60' y='238' width='320' height='24' rx='12' fill='%23cbd5e1'/><rect x='60' y='274' width='220' height='18' rx='9' fill='%23e2e8f0'/><text x='60' y='58' font-size='18' font-family='Arial,Helvetica,sans-serif' fill='%23334155'>Item 4</text></svg>" alt="img"><div class="body"><h4>Item 4</h4><p>Resumo</p></div></div>
+      <div class="card"><img data-random="true" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='640' height='360' viewBox='0 0 640 360'><defs><linearGradient id='g' x1='0' x2='1' y1='0' y2='1'><stop stop-color='%23f3f4f6'/><stop offset='1' stop-color='%23e5e7eb'/></linearGradient></defs><rect width='640' height='360' fill='url(%23g)'/><circle cx='96' cy='76' r='26' fill='%23d1d5db'/><rect x='60' y='238' width='320' height='24' rx='12' fill='%23cbd5e1'/><rect x='60' y='274' width='220' height='18' rx='9' fill='%23e2e8f0'/><text x='60' y='58' font-size='18' font-family='Arial,Helvetica,sans-serif' fill='%23334155'>Item 5</text></svg>" alt="img"><div class="body"><h4>Item 5</h4><p>Resumo</p></div></div>
+    </div>
+  </main>
+  <script src="../shared/random-images.js"></script>
+</body>
+</html>

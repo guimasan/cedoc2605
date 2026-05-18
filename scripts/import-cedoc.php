@@ -2,7 +2,32 @@
 
 declare(strict_types=1);
 
-require '/var/www/html/wp-load.php';
+function cedoc_find_wp_load_path(): string {
+    $candidates = [
+        '/var/www/html/wp-load.php',
+        __DIR__ . '/../wp-load.php',
+        __DIR__ . '/../../wp-load.php',
+        getcwd() . '/wp-load.php',
+    ];
+
+    $document_root = $_SERVER['DOCUMENT_ROOT'] ?? '';
+    if ($document_root !== '') {
+        $candidates[] = rtrim($document_root, '/') . '/wp-load.php';
+    }
+
+    foreach ($candidates as $candidate) {
+        if ($candidate !== '' && file_exists($candidate)) {
+            return $candidate;
+        }
+    }
+
+    throw new RuntimeException('Unable to locate wp-load.php. Run this script from a WordPress installation or a WP-CLI context.');
+}
+
+if (!defined('ABSPATH')) {
+    require cedoc_find_wp_load_path();
+}
+
 require_once ABSPATH . 'wp-admin/includes/file.php';
 require_once ABSPATH . 'wp-admin/includes/media.php';
 require_once ABSPATH . 'wp-admin/includes/image.php';

@@ -6,21 +6,52 @@
   <title>Catálogo CEDOC - CEACA</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <header>
-    <h1>Catálogo CEDOC</h1>
-    <nav>
-      <a href="index.html">Início</a>
-      <a href="catalogo.html">Catálogo</a>
-      <a href="sobre.html">Sobre</a>
-      <a href="contato.html">Contato</a>
-    </nav>
+<body data-image-base="assets/images/">
+  <header class="versions-topbar" aria-label="Navegação entre versões">
+    <a href="versoes/index.html">Hub</a>
+    <a class="active" href="index.html">Versão 1</a>
+    <a href="versoes/versao-2/index.html">Versão 2</a>
+    <a href="versoes/versao-3/index.html">Versão 3</a>
+  </header>
+  <header class="site-header">
+    <div class="brand-block">
+      <span class="eyebrow">CEACA CEDOC</span>
+      <h1>Catálogo documental</h1>
+      <p>Organização por categorias com busca rápida e acesso social para consulta e divulgação.</p>
+    </div>
+    <div class="menu-stack">
+      <nav class="category-nav" aria-label="Categorias do acervo">
+        <a href="sobre.html#ceaca-sobre-nos">CEACA Sobre nós</a>
+        <a href="#educacao">Educação e Cultura Tradicional</a>
+        <a href="#articulacao">Articulação</a>
+        <a href="#saberes">Documentação de Saberes</a>
+        <a href="#manifestacoes">Manifestações culturais</a>
+      </nav>
+      <div class="search-row">
+        <form class="search-form" action="catalogo.html" method="get">
+          <label class="sr-only" for="catalog-search">Buscar no catálogo</label>
+          <input id="catalog-search" name="q" type="search" placeholder="Buscar no catálogo">
+          <button type="submit" aria-label="Buscar">⌕</button>
+        </form>
+        <a class="pill-link" href="index.html">Voltar à home</a>
+      </div>
+    </div>
   </header>
   <main>
     <section>
       <h2>Acervo Documental</h2>
         <p>O acervo do CEDOC está organizado em categorias e subcategorias, facilitando a navegação e a pesquisa de documentos, registros, imagens e produções culturais. Explore abaixo as principais áreas do acervo:</p>
         <div class="catalogo-categorias">
+          <h3 id="ceaca">CEACA Sobre nós</h3>
+          <ul>
+            <li>Memória e oralidade</li>
+            <li>Mestre Alcides</li>
+            <li>Formação de Aprendizes</li>
+            <li>Eventos e batizados</li>
+            <li>Materiais didáticos</li>
+          </ul>
+          <p class="desc">Tudo que o CEACA produziu, protagonizou ou que conta sua história: fundação, trajetória, aprendizes, eventos, materiais didáticos e homenagens ao Mestre Alcides.</p>
+
           <h3>Educação e Cultura Tradicional</h3>
           <ul>
             <li>Projetos e Programas pedagógicos</li>
@@ -30,16 +61,6 @@
             <li>Território e identidade</li>
           </ul>
           <p class="desc">Documentos sobre capoeira e culturas tradicionais como práticas pedagógicas, projetos educacionais, políticas públicas, registros de mestres e tradição oral, e identidade cultural.</p>
-
-          <h3>CEACA</h3>
-          <ul>
-            <li>Memória e oralidade</li>
-            <li>Mestre Alcides</li>
-            <li>Formação de Aprendizes</li>
-            <li>Eventos e batizados</li>
-            <li>Materiais didáticos</li>
-          </ul>
-          <p class="desc">Tudo que o CEACA produziu, protagonizou ou que conta sua história: fundação, trajetória, aprendizes, eventos, materiais didáticos e homenagens ao Mestre Alcides.</p>
 
           <h3>Articulação</h3>
           <ul>
@@ -69,11 +90,30 @@
           </ul>
           <p class="desc">Registros de práticas da capoeira, danças, festas, rituais e apresentações culturais documentadas pelo CEACA e parceiros.</p>
         </div>
+        <div class="random-gallery" aria-label="Imagens aleatórias do acervo">
+          <img data-random="true" src="assets/images/capa.png" alt="Imagem aleatória 1">
+          <img data-random="true" src="assets/images/section_accordion.png" alt="Imagem aleatória 2">
+          <img data-random="true" src="assets/images/logo-footer.svg" alt="Imagem aleatória 3">
+        </div>
         <p style="margin-top:1rem;">Para mais informações ou para acessar documentos específicos, entre em contato.</p>
+    </section>
+    <section class="share-bar" data-share-bar>
+      <div>
+        <strong>Compartilhar esta página</strong>
+        <span>Envie o catálogo para sua rede de contatos.</span>
+      </div>
+      <div class="share-links">
+        <a data-share-network="whatsapp" target="_blank" rel="noreferrer noopener" href="#">WhatsApp</a>
+        <a data-share-network="facebook" target="_blank" rel="noreferrer noopener" href="#">Facebook</a>
+        <a data-share-network="linkedin" target="_blank" rel="noreferrer noopener" href="#">LinkedIn</a>
+        <a data-share-network="x" target="_blank" rel="noreferrer noopener" href="#">X</a>
+      </div>
     </section>
   </main>
   <footer>
     <p>&copy; 2026 CEACA CEDOC. E-mail: capoeiraceaca@gmail.com</p>
   </footer>
+  <script src="shared/share.js"></script>
+  <script src="shared/random-images.js"></script>
 </body>
 </html>

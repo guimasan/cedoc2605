@@ -10,75 +10,77 @@ get_header();
 get_template_part( 'template-parts/bannerheader' );
 
 $subcategory_slug = cedoc_get_current_subcategory_slug();
+$subcategory_key = (string) get_post_field( 'post_name', get_the_ID() );
 $search_term = isset($_GET['search']) ? sanitize_text_field(wp_unslash($_GET['search'])) : '';
+$subcategory_blueprints = cedoc_get_subcategory_blueprints();
+$subcategory_blueprint = $subcategory_blueprints[ $subcategory_slug ] ?? $subcategory_blueprints[ $subcategory_key ] ?? array();
+$subcategory_lead = $subcategory_blueprint['lead'] ?? '';
+$related_story_pages = $subcategory_blueprint['page_slugs'] ?? array();
+$current_category_slug = cedoc_get_category_from_subcategory_slug($subcategory_slug);
 ?>
 
 <main role="main" class="mt-5">
 	
-	<!-- SUBCATEGORY HEADER -->
-	<section class="cedoc-subcategory-header py-5" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+	<section class="cedoc-subcategory-header py-5 bg-white">
 		<div class="container-fluid max-large margin-one-column">
-			<div class="row">
-				<div class="col-12">
-					<nav aria-label="breadcrumb">
-						<ol class="breadcrumb bg-transparent mb-3">
-							<li class="breadcrumb-item"><a href="<?php echo esc_url(home_url()); ?>" style="color: rgba(255,255,255,0.8);">Home</a></li>
-							<li class="breadcrumb-item active" style="color: rgba(255,255,255,0.9);"><?php the_title(); ?></li>
-						</ol>
-					</nav>
+			<nav aria-label="breadcrumb" class="mb-3">
+				<ol class="breadcrumb bg-transparent px-0 mb-0">
+					<li class="breadcrumb-item"><a href="<?php echo esc_url(home_url()); ?>">Página Inicial</a></li>
+					<li class="breadcrumb-item"><a href="<?php echo esc_url(home_url('/#categoria-' . esc_attr($current_category_slug))); ?>">Categoria</a></li>
+					<li class="breadcrumb-item active"><?php the_title(); ?></li>
+				</ol>
+			</nav>
 
-					<h1 class="mb-3"><?php the_title(); ?></h1>
-					
-					<?php if (have_posts()) : the_post(); ?>
-						<p class="lead mb-4">
-							<?php 
-							$excerpt = get_the_excerpt();
-							if ($excerpt) {
-								echo wp_kses_post($excerpt);
-							}
-							?>
-						</p>
-					<?php endif; wp_reset_postdata(); ?>
-
-					<div class="cedoc-subcategory-actions">
-						<a href="<?php echo esc_url(home_url()); ?>#categoria-<?php echo esc_attr(cedoc_get_category_from_subcategory_slug($subcategory_slug)); ?>" class="btn btn-light btn-sm mr-2">
-							<i class="tainacan-icon tainacan-icon-arrowleft"></i> Voltar para Categorias
-						</a>
+			<div class="cedoc-subcategory-hero card border-0 shadow-sm">
+				<div class="card-body p-4 p-lg-5">
+					<div class="row align-items-center">
+						<div class="col-12 col-lg-8">
+							<span class="cedoc-layout-label">Subcategoria CEACA</span>
+							<h1 class="mb-3"><?php the_title(); ?></h1>
+							<p class="lead mb-0"><?php echo esc_html( $subcategory_lead !== '' ? $subcategory_lead : get_the_excerpt() ); ?></p>
+						</div>
+						<div class="col-12 col-lg-4 text-lg-right mt-4 mt-lg-0">
+							<a href="<?php echo esc_url(home_url('/acervo-cedoc/')); ?>" class="btn btn-outline-dark mr-2 mb-2">Abrir acervo</a>
+							<a href="<?php echo esc_url(home_url('/#categoria-' . esc_attr($current_category_slug))); ?>" class="btn btn-primary mb-2">Voltar à categoria</a>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- SUBCATEGORY DESCRIPTION -->
-	<section class="cedoc-subcategory-content py-5 bg-white">
+	<section class="cedoc-subcategory-content py-5">
 		<div class="container-fluid max-large margin-one-column">
-			<div class="row">
-				<div class="col-12">
-					<?php
-					if (have_posts()) {
-						while (have_posts()) {
-							the_post();
-							?>
-							<article class="cedoc-page-article">
-								<?php
-								// Display content but exclude heading (already in header)
-								$content = get_the_content();
-								$content = preg_replace('/<h1[^>]*>.*?<\/h1>/i', '', $content);
-								echo wp_kses_post($content);
-								?>
-							</article>
-							<?php
-						}
-					}
-					wp_reset_postdata();
-					?>
+			<?php if ( ! empty( $related_story_pages ) ) : ?>
+				<div class="cedoc-story-section mb-4">
+					<div class="cedoc-story-section-header">
+						<div>
+							<span class="cedoc-layout-label">Textos migrados do ceaca.wordpress</span>
+							<h3>Conteúdo relacionado</h3>
+							<p>O texto desta subcategoria foi distribuído em páginas que fazem sentido dentro do acervo.</p>
+						</div>
+					</div>
+					<?php echo wp_kses_post( cedoc_render_page_story_cards( $related_story_pages, 'Página migrada' ) ); ?>
 				</div>
+			<?php endif; ?>
+
+			<div class="cedoc-page-article bg-white p-4 p-lg-5 rounded shadow-sm">
+				<?php
+				if ( have_posts() ) {
+					while ( have_posts() ) {
+						the_post();
+						$content = get_the_content();
+						$content = preg_replace('/<h1[^>]*>.*?<\/h1>/i', '', $content);
+						echo wp_kses_post( $content );
+					}
+				}
+				wp_reset_postdata();
+				?>
 			</div>
 		</div>
 	</section>
 
-	<section class="cedoc-subcategory-collection py-5" style="background-color: #f8f9fa;">
+	<section class="cedoc-subcategory-collection py-5 bg-light">
 		<div class="container-fluid max-large margin-one-column">
 			<?php
 			$items = cedoc_get_items_by_subcategory($subcategory_slug, 24, $search_term);
@@ -91,8 +93,8 @@ $search_term = isset($_GET['search']) ? sanitize_text_field(wp_unslash($_GET['se
 				<div class="card-body">
 					<div class="row align-items-end">
 						<div class="col-12 col-lg-8 mb-3 mb-lg-0">
-							<h2 class="mb-2">Acervo desta Subcategoria</h2>
-							<p class="text-muted mb-0">Visualização em cards com busca, seleção e acesso rápido aos itens relacionados.</p>
+							<h2 class="mb-2">Acervo desta subcategoria</h2>
+							<p class="text-muted mb-0">Busca, navegação e acesso rápido aos itens relacionados ao texto migrado.</p>
 						</div>
 						<div class="col-12 col-lg-4 text-lg-right">
 							<a href="<?php echo esc_url(home_url('/acervo-cedoc/')); ?>" class="btn btn-sm btn-outline-dark mr-2 mb-2">Ver acervo</a>
@@ -125,7 +127,10 @@ $search_term = isset($_GET['search']) ? sanitize_text_field(wp_unslash($_GET['se
 				<div class="cedoc-gallery-grid">
 					<?php foreach ($items as $item) : ?>
 						<?php
-						$thumbnail = cedoc_get_item_thumbnail($item->ID, 'large');
+							$thumbnail = cedoc_get_item_thumbnail($item->ID, 'large');
+							if ( ! $thumbnail ) {
+								$thumbnail = cedoc_get_random_item_image();
+							}
 						$item_link = get_permalink($item->ID);
 						$item_title = get_the_title($item->ID) ?: 'Item ' . $item->ID;
 						$item_synopsis = cedoc_get_item_synopsis($item->ID, 18);
@@ -133,7 +138,7 @@ $search_term = isset($_GET['search']) ? sanitize_text_field(wp_unslash($_GET['se
 						<article class="cedoc-gallery-card">
 							<a href="<?php echo esc_url($item_link); ?>">
 								<div class="cedoc-gallery-card-media">
-									<img src="<?php echo esc_url($thumbnail ? $thumbnail : get_theme_file_uri('/assets/images/thumbnail_placeholder.png')); ?>" alt="<?php echo esc_attr($item_title); ?>">
+									<img src="<?php echo esc_url($thumbnail); ?>" alt="<?php echo esc_attr($item_title); ?>">
 								</div>
 								<div class="cedoc-gallery-card-body">
 									<div class="cedoc-gallery-card-kicker">Subcategoria</div>

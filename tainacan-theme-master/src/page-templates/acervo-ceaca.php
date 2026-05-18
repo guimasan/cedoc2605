@@ -63,8 +63,10 @@ get_header();
 									onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.1)';">
 									
 									<?php 
-										$image = wp_get_attachment_image_src(get_post_thumbnail_id($item->ID), 'large');
-										$image_url = $image ? $image[0] : get_theme_file_uri('/assets/images/placeholder.svg');
+										$image_url = cedoc_get_item_thumbnail( $item->ID, 'large' );
+										if ( ! $image_url ) {
+											$image_url = cedoc_get_random_item_image();
+										}
 									?>
 									
 									<div style="aspect-ratio: 1; overflow: hidden; background: #f0f0f0;">

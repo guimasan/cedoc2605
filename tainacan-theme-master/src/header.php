@@ -8,6 +8,11 @@
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php endif; ?>
 	<?php wp_head(); ?>
+	<?php
+	// Increase execution time for heavy pages while debugging locally
+	@ini_set( 'max_execution_time', '120' );
+	@set_time_limit(120);
+	?>
 </head>
 <body <?php body_class(); ?>>
 
@@ -17,53 +22,115 @@
 		} else {
 			do_action( 'wp_body_open' );
 		}
-	
-		if ( !get_theme_mod('tainacan_use_block_template_parts_on_header', false) ) : 
+
+		$cedoc_layout = '2';
+
+		$cedoc_layout_base = home_url( '/' );
+		// Primary menu simplified for commercial layout
+		$cedoc_primary_menu = array(
+			array(
+				'label' => 'Sobre nós',
+				'url' => home_url( '/sobre/' ),
+			),
+			array(
+				'label' => 'Acervo',
+				'url' => home_url( '/catalogo/' ),
+			),
+			array(
+				'label' => 'Contato',
+				'url' => home_url( '/contato/' ),
+			),
+			array(
+				'label' => 'Catalogo',
+				'url' => home_url( '/catalogo/' ),
+			),
+		);
+
+		$cedoc_v2_menu = array(
+			array(
+				'label' => 'Sobre nós',
+				'url' => home_url( '/sobre/' ),
+			),
+			array(
+				'label' => 'Acervo',
+				'url' => home_url( '/catalogo/' ),
+			),
+			array(
+				'label' => 'Contato',
+				'url' => home_url( '/contato/' ),
+			),
+			array(
+				'label' => 'Redes Sociais',
+				'url' => home_url( '/contato/#redes-sociais' ),
+			),
+		);
+
+		if ( true ) :
 	?>
 	<nav 
-			style="min-height: <?php echo esc_attr(get_theme_mod('tainacan_header_min_height', 50)) ?>px;"
-			class="navbar navbar-expand-md navbar-light bg-white menu-shadow px-0 navbar--border-bottom <?php echo 'tainacan-header-layout--' . esc_attr(get_theme_mod('tainacan_header_alignment_options', 'default')); ?>">
-		<div class="container-fluid max-large px-0 margin-one-column" id="topNavbar">
+			style="min-height: 40px;"
+			class="navbar navbar-expand-md navbar-light bg-white menu-shadow px-0 navbar--border-bottom cedoc-header--v<?php echo esc_attr( $cedoc_layout ); ?> <?php echo 'tainacan-header-layout--' . esc_attr( get_theme_mod( 'tainacan_header_alignment_options', 'default' ) ); ?>">
+		<div class="container-fluid max-large px-0" id="topNavbar">
 			<?php echo wp_kses_post(tainacan_get_logo() ?? ''); ?>
 
-			<div class="navbar-box">
-				<?php if ( has_nav_menu( 'navMenubelowHeader' ) ) : ?>
-					<nav class="navbar navbar-expand-md navbar-light px-0 menu-belowheader" role="navigation">
-						<div class="container-fluid max-large px-0 margin-one-column">
-							<button class="navbar-toggler text-heavy-metal border-0 p-2 collapsed" type="button" data-toggle="collapse" data-target="#menubelowHeader" aria-controls="menubelowHeader" aria-expanded="false" aria-label="<?php _e('Open navigation menu', 'tainacan-interface') ?>">
-								<span class="tainacan-icon tainacan-icon-menu"></span>
-								<span class="tainacan-icon tainacan-icon-close"></span>
-							</button>
-							<?php
-								wp_nav_menu( array(
-									'theme_location'  => 'navMenubelowHeader',
-									'container'       => 'div',
-									'container_class' => 'collapse navbar-collapse',
-									'container_id'    => 'menubelowHeader',
-									'menu_class'      => 'navbar-nav mr-auto',
-									'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-									'walker'          => new WP_Bootstrap_Navwalker(),
-								) );
-							?>
-						</div>
+			<div class="navbar-box cedoc-header-shell cedoc-header-shell--v<?php echo esc_attr( $cedoc_layout ); ?>">
+				<?php if ( '1' === $cedoc_layout ) : ?>
+					<nav class="cedoc-header-nav cedoc-header-nav--v1" aria-label="Categorias do acervo">
+						<?php foreach ( $cedoc_primary_menu as $menu_item ) : ?>
+							<a class="cedoc-header-nav-item" href="<?php echo esc_url( $menu_item['url'] ); ?>">
+								<?php echo esc_html( $menu_item['label'] ); ?>
+							</a>
+						<?php endforeach; ?>
 					</nav>
-				<?php endif; ?>
 
-				<div class="btn-group" style="padding: 0.6rem 0;">
-				
-				<?php if (!get_theme_mod('tainacan_hide_search_input', false)) : ?>
-					<div class="dropdown tainacan-form-dropdown">
-						<button class="btn btn-link text-midnight-blue px-1 dropdown-toggle" type="button" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<i class="tainacan-icon tainacan-icon-search"></i>
-							<i class="tainacan-icon tainacan-icon-close"></i>
-						</button>
-						<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+					<?php if ( ! get_theme_mod( 'tainacan_hide_search_input', false ) ) : ?>
+						<div class="cedoc-header-search cedoc-header-search--v1">
 							<?php get_search_form(); ?>
 						</div>
+					<?php endif; ?>
+				<?php elseif ( '2' === $cedoc_layout ) : ?>
+					<div class="cedoc-header-rail cedoc-header-rail--commercial">
+						<div class="cedoc-header-rail__eyebrow">CEACA / Tainacan</div>
+						<div class="cedoc-header-rail__title">Acervo com visual comercial</div>
 					</div>
-				<?php endif; ?>
+					<nav class="cedoc-header-nav cedoc-header-nav--v2 cedoc-header-nav--with-search" aria-label="Categorias do acervo">
+						<?php foreach ( $cedoc_v2_menu as $menu_item ) : ?>
+							<a class="cedoc-header-nav-item" href="<?php echo esc_url( $menu_item['url'] ); ?>">
+								<?php echo esc_html( $menu_item['label'] ); ?>
+							</a>
+						<?php endforeach; ?>
 
-				</div>
+							<div class="cedoc-header-search cedoc-header-search--v2 cedoc-header-search--inline">
+								<form role="search" method="get" class="cedoc-inline-search" action="<?php echo esc_url( home_url( '/catalogo/' ) ); ?>">
+									<div class="cedoc-inline-search__field">
+										<input class="form-control" type="search" name="s" placeholder="Buscar" id="tainacan-search">
+										<button class="btn cedoc-inline-search__btn" type="submit"><i class="tainacan-icon tainacan-icon-search"></i></button>
+									</div>
+								</form>
+							</div>
+					</nav>
+				<?php else : ?>
+					<nav class="cedoc-header-nav cedoc-header-nav--v3" aria-label="Categorias do acervo">
+						<a class="cedoc-header-nav-hero" href="<?php echo esc_url( $cedoc_primary_menu[0]['url'] ); ?>">
+							<span class="cedoc-header-nav-hero__kicker">Primeiro destaque</span>
+							<strong><?php echo esc_html( $cedoc_primary_menu[0]['label'] ); ?></strong>
+							<span>Instituição, memória e território</span>
+						</a>
+						<div class="cedoc-header-nav-grid">
+							<?php foreach ( array_slice( $cedoc_primary_menu, 1 ) as $menu_item ) : ?>
+								<a class="cedoc-header-nav-item" href="<?php echo esc_url( $menu_item['url'] ); ?>">
+									<?php echo esc_html( $menu_item['label'] ); ?>
+								</a>
+							<?php endforeach; ?>
+						</div>
+					</nav>
+
+					<?php if ( ! get_theme_mod( 'tainacan_hide_search_input', false ) ) : ?>
+						<div class="cedoc-header-search cedoc-header-search--v3">
+							<?php get_search_form(); ?>
+						</div>
+					<?php endif; ?>
+				<?php endif; ?>
 			</div>
 		</div>
 	</nav>

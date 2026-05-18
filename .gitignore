@@ -3,6 +3,7 @@
 *.sql.gz
 *.tar.gz
 *.zip
+backup-5.5.2026_11-17-33_ceacac76/
 .hostgator-restore/
 .deploy/
 

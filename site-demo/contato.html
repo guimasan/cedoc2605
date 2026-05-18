@@ -6,7 +6,13 @@
   <title>Contato - CEACA CEDOC</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-image-base="assets/images/">
+  <header class="versions-topbar" aria-label="Navegação entre versões">
+    <a href="versoes/index.html">Hub</a>
+    <a class="active" href="index.html">Versão 1</a>
+    <a href="versoes/versao-2/index.html">Versão 2</a>
+    <a href="versoes/versao-3/index.html">Versão 3</a>
+  </header>
   <header>
     <h1>Contato</h1>
     <nav>
@@ -14,10 +20,16 @@
       <a href="catalogo.html">Catálogo</a>
       <a href="sobre.html">Sobre</a>
       <a href="contato.html">Contato</a>
+      <a href="versoes/index.html">Versões</a>
     </nav>
   </header>
   <main>
     <section>
+      <div class="random-gallery" aria-label="Imagens de contato">
+        <img data-random="true" src="assets/images/whatsapp-circle.png" alt="Imagem de contato 1">
+        <img data-random="true" src="assets/images/url-circle.png" alt="Imagem de contato 2">
+        <img data-random="true" src="assets/images/section_tabs.png" alt="Imagem de contato 3">
+      </div>
       <h2>Fale conosco</h2>
       <p>Para dúvidas, sugestões ou solicitações de conteúdo, entre em contato:</p>
       <ul>
@@ -28,5 +40,6 @@
   <footer>
     <p>&copy; 2026 CEACA CEDOC. E-mail: capoeiraceaca@gmail.com</p>
   </footer>
+  <script src="shared/random-images.js"></script>
 </body>
 </html>

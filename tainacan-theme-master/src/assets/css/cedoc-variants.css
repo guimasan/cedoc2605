@@ -1,0 +1,1300 @@
+.cedoc-header-layout-switcher {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.45rem 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, rgba(23, 63, 53, 0.08), rgba(255, 255, 255, 0.9));
+  border-bottom: 1px solid rgba(32, 49, 43, 0.08);
+}
+
+.cedoc-header-layout-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #60706a;
+}
+
+.cedoc-header-layout-links,
+.cedoc-header-nav,
+.cedoc-share-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.cedoc-header-layout-links a,
+.cedoc-header-nav-item,
+.cedoc-share-links a {
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 0.48rem 0.78rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  border: 1px solid rgba(32, 49, 43, 0.12);
+  transition: transform 160ms ease, background 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+.cedoc-header-layout-links a {
+  color: #20312b;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.cedoc-header-layout-links a.active {
+  background: #173f35;
+  color: #fff;
+  border-color: transparent;
+}
+
+.cedoc-header-shell {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.cedoc-header-nav {
+  flex: 1 1 620px;
+  min-width: 0;
+  align-items: center;
+}
+
+/* Improved menu layout: larger touch targets, consistent gaps */
+.cedoc-header-nav--v1,
+.cedoc-header-nav--v2,
+.cedoc-header-nav--v3 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.25rem 0.25rem;
+}
+
+.cedoc-header-nav-item {
+  padding: 0.48rem 0.75rem; /* slightly reduced to align with search height */
+  border-radius: 12px;
+  font-size: 0.92rem;
+}
+
+/* Make the first (featured) item more prominent across variants */
+.cedoc-header-nav-item--featured {
+  padding: 0.9rem 1.2rem;
+  box-shadow: 0 6px 20px rgba(16,21,34,0.08);
+}
+
+/* Ensure search sits to the right on larger screens */
+.cedoc-header-search {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.cedoc-header-nav-item {
+  color: #20312b;
+  background: rgba(255, 255, 255, 0.95);
+  white-space: nowrap;
+}
+
+.cedoc-header-nav-item:hover,
+.cedoc-header-nav-item:focus-visible,
+.cedoc-header-layout-links a:hover,
+.cedoc-header-layout-links a:focus-visible,
+.cedoc-share-links a:hover,
+.cedoc-share-links a:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(23, 63, 53, 0.28);
+}
+
+.cedoc-header-nav-item--featured {
+  background: linear-gradient(135deg, #173f35, #9a6a2f);
+  color: #fff;
+}
+
+.cedoc-header-shell--v2 {
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.6rem;
+  flex-wrap: nowrap; /* keep nav and search on same line */
+}
+
+.cedoc-header-rail--commercial {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 255, 255, 0.9));
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  min-width: 180px;
+}
+
+.cedoc-header-rail__eyebrow {
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #8b6d00;
+  font-weight: 800;
+}
+
+.cedoc-header-rail__title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #111;
+}
+
+.cedoc-header-nav--v2 {
+  justify-content: flex-start;
+  gap: 0.4rem;
+  flex: 0 1 auto; /* allow nav to shrink to keep search visible */
+  min-width: 0;
+}
+
+/* Ensure the search placed inside the nav sits to the far right inline */
+.cedoc-header-nav--with-search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.cedoc-header-nav--with-search .cedoc-header-search {
+  margin-left: 0.5rem; /* sit right after the last menu item */
+  flex: 0 0 auto;
+  align-self: center;
+}
+
+.cedoc-header-search--inline .cedoc-inline-search__field {
+  max-width: 260px; /* keep the inline search compact */
+}
+
+.cedoc-header-search--v2 {
+  flex: 0 0 auto;
+  margin-left: 0.5rem;
+  min-width: 140px;
+  max-width: 260px;
+}
+
+.cedoc-header-shell--v3 {
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cedoc-header-nav--v3 {
+  display: grid;
+  grid-template-columns: minmax(240px, 1.35fr) minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: stretch;
+  flex: 1 1 760px;
+}
+
+.cedoc-header-nav-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.35rem;
+  padding: 0.8rem 0.95rem;
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(16, 21, 34, 0.96), rgba(240, 165, 45, 0.9));
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 16px 40px rgba(16, 21, 34, 0.16);
+}
+
+.cedoc-header-nav-hero__kicker {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  opacity: 0.85;
+}
+
+.cedoc-header-nav-hero strong {
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+
+.cedoc-header-nav-hero span {
+  font-size: 0.88rem;
+  opacity: 0.9;
+}
+
+.cedoc-header-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
+  align-content: start;
+}
+
+.cedoc-header-shell--v3 .cedoc-header-search--v3 {
+  flex: 0 1 300px;
+  align-self: center;
+}
+
+.cedoc-header-shell--v3 .cedoc-inline-search__field {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: rgba(16, 21, 34, 0.12);
+}
+
+.cedoc-header-shell--v3 .cedoc-inline-search__field button {
+  background: linear-gradient(135deg, #101522, #f0a52d);
+}
+
+.cedoc-header-nav-grid .cedoc-header-nav-item {
+  white-space: normal;
+  text-align: left;
+  justify-content: flex-start;
+  min-height: 100%;
+  line-height: 1.15;
+  padding: 0.72rem 0.85rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.cedoc-header-nav-grid .cedoc-header-nav-item--featured {
+  background: linear-gradient(135deg, #173f35, #9a6a2f);
+  color: #fff;
+}
+
+.cedoc-header-nav-grid .cedoc-header-nav-item:hover,
+.cedoc-header-nav-grid .cedoc-header-nav-item:focus-visible,
+.cedoc-header-nav-hero:hover,
+.cedoc-header-nav-hero:focus-visible {
+  transform: translateY(-2px);
+}
+
+.cedoc-header-search {
+  flex: 0 1 240px;
+  min-width: 180px;
+}
+
+.cedoc-inline-search {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.cedoc-inline-search__field {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.22rem 0.35rem; /* tighter padding so height matches menu items */
+  border-radius: 999px;
+  border: 1px solid rgba(32, 49, 43, 0.12);
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.cedoc-inline-search__field input {
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+  min-width: 0;
+  font-size: 0.92rem;
+  padding: 0.32rem 0.4rem;
+}
+
+.cedoc-inline-search__field button {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  background: linear-gradient(135deg, #173f35, #9a6a2f);
+  color: #fff;
+}
+
+.cedoc-share-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 1.25rem;
+}
+
+.cedoc-share-strip__copy strong {
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.cedoc-share-strip__copy span {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.cedoc-share-links a {
+  color: #20312b;
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.cedoc-header--v2 .cedoc-header-nav-item--featured {
+  background: #ffd700;
+  color: #000;
+}
+
+.cedoc-header--v2 .cedoc-inline-search__field button {
+  background: linear-gradient(135deg, #355c7d, #6c8aa6);
+}
+
+.cedoc-header--v3 .cedoc-header-layout-switcher {
+  background: linear-gradient(135deg, rgba(240, 165, 45, 0.14), rgba(16, 23, 35, 0.05));
+}
+
+.cedoc-header--v3 .cedoc-header-nav-item--featured {
+  background: linear-gradient(135deg, #101522, #f0a52d);
+  color: #fff;
+}
+
+.cedoc-header--v3 .cedoc-inline-search__field button {
+  background: linear-gradient(135deg, #101522, #f0a52d);
+}
+
+.cedoc-header--v3 .cedoc-header-layout-links a.active {
+  background: #101522;
+  color: #fff;
+}
+
+.cedoc-header--v2 .navbar,
+.cedoc-header--v3 .navbar {
+  border-bottom: 0;
+}
+
+.cedoc-header--v2 .navbar {
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.cedoc-header--v3 .navbar {
+  background: linear-gradient(90deg, #fff, #f4fbfb);
+}
+
+/* Reduce heavy header background and make navbar less intrusive */
+.cedoc-header-layout-switcher {
+  padding: 0.12rem 0.5rem;
+  background: transparent;
+  border-bottom: none;
+}
+
+.cedoc-header-shell {
+  padding: 0;
+}
+
+.navbar {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  min-height: 0 !important;
+}
+
+.navbar.navbar-expand-md,
+.navbar.navbar-expand-lg {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.navbar .container-fluid {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Reduce top/bottom whitespace specifically for Version 1 header */
+.cedoc-header--v1 .navbar {
+  padding-top: 0.15rem !important;
+  padding-bottom: 0.15rem !important;
+  min-height: 36px !important;
+}
+
+/* Make V2 hero larger and ensure images cover the area */
+.cedoc-v2-hero-media img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Carousel caption overlay: bottom aligned with translucent/blur background */
+.cedoc-v2-hero {
+  position: relative;
+}
+
+.cedoc-v2-hero-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1rem 1.25rem;
+  color: #fff;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.45) 40%, rgba(0,0,0,0.6) 100%);
+  backdrop-filter: blur(4px);
+}
+
+.cedoc-v2-hero-caption h2,
+.cedoc-v2-hero-caption p {
+  margin: 0;
+}
+
+/* Carousel slide for V2: full-height image with a bottom overlay strip */
+.cedoc-layout-v2 .carousel-item,
+.cedoc-layout-v2 .cedoc-carousel-slide {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  min-height: clamp(440px, 58vw, 620px);
+  background: #101522;
+}
+
+.cedoc-layout-v2 .cedoc-carousel-slide__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cedoc-layout-v2 .cedoc-carousel-slide-overlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  min-height: 36%;
+  padding: 1.35rem 1.4rem 1.45rem;
+  color: #fff;
+  display: flex;
+  align-items: flex-end;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.22) 30%, rgba(0,0,0,0.82) 100%);
+  backdrop-filter: blur(5px);
+}
+
+.cedoc-layout-v2 .cedoc-carousel-slide-overlay .container {
+  height: 100%;
+  display: flex;
+  align-items: flex-end !important;
+}
+
+.cedoc-layout-v2 .cedoc-carousel-slide-content {
+  max-width: min(680px, 100%);
+}
+
+.cedoc-layout-v2 .cedoc-carousel-slide-kicker {
+  display: inline-block;
+  margin-bottom: 0.45rem;
+  padding: 0.22rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.cedoc-layout-v2 .cedoc-carousel-slide-overlay h2,
+.cedoc-layout-v2 .cedoc-carousel-slide-overlay p {
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+}
+
+.cedoc-layout-v2 .cedoc-carousel-slide-overlay h2 {
+  font-size: clamp(1.85rem, 3.2vw, 3.3rem);
+  line-height: 1.05;
+  font-weight: 900;
+  margin-bottom: 0.55rem;
+}
+
+.cedoc-layout-v2 .cedoc-carousel-slide-overlay p {
+  max-width: 42rem;
+  font-size: clamp(1rem, 1.3vw, 1.18rem);
+  line-height: 1.55;
+  margin-bottom: 1rem;
+}
+
+/* Gallery grid spacing inside V2 */
+.cedoc-v2-main .cedoc-gallery-grid {
+  margin-top: 1.25rem;
+}
+
+/* Improve gallery card media sizing */
+.cedoc-gallery-card .cedoc-gallery-card-media img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+/* V3: slightly bigger card images to feel more commercial */
+.cedoc-v3-card .cedoc-v3-card-image img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Gallery grid: consistent card sizes, gap and responsive columns */
+.cedoc-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+.cedoc-gallery-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(16,21,34,0.06);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.cedoc-gallery-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(16,21,34,0.12);
+}
+
+/* Ensure header container uses full width for our custom header */
+.navbar .container-fluid.max-large {
+  margin: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  max-width: 100% !important;
+}
+
+/* Small header switcher compact */
+.cedoc-header-layout-switcher {
+  padding: 0.08rem 0.25rem !important;
+  background: transparent !important;
+  border-bottom: none !important;
+}
+
+/* Carousel slide overlay handled above for V2 */
+
+/* Masonry grid for v3 */
+.cedoc-v3-masonry {
+  column-count: 3;
+  column-gap: 1rem;
+}
+.cedoc-v3-masonry-item {
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 1rem;
+  break-inside: avoid;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(16,21,34,0.06);
+}
+.cedoc-v3-masonry-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+@media (max-width: 992px) {
+  .cedoc-v3-masonry { column-count: 2; }
+}
+@media (max-width: 576px) {
+  .cedoc-v3-masonry { column-count: 1; }
+  .cedoc-v2-hero-media img { height: 240px; }
+}
+
+.cedoc-gallery-card-media img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.cedoc-gallery-card-body {
+  padding: 12px 14px;
+}
+
+/* Make toolbar more compact and aligned */
+.cedoc-gallery-toolbar .card-body {
+  padding: 0.75rem 0.9rem;
+}
+
+@media (max-width: 767.98px) {
+  .cedoc-gallery-card-media img { height: 140px; }
+}
+
+@media (max-width: 991.98px) {
+  .cedoc-header-search {
+    flex-basis: 100%;
+  }
+
+  .cedoc-header-nav {
+    flex-basis: 100%;
+  }
+
+	.cedoc-header-nav--v3 {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 767.98px) {
+  .cedoc-header-layout-switcher {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cedoc-header-layout-links,
+  .cedoc-header-nav,
+  .cedoc-share-links {
+    width: 100%;
+  }
+
+  .cedoc-header-nav-item {
+    width: 100%;
+  }
+
+  .cedoc-header-nav-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cedoc-header-rail--commercial {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+/* ========== GALLERY ARCHIVE STYLING ========== */
+
+.cedoc-gallery-toolbar {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+}
+
+.cedoc-gallery-toolbar--v1 {
+  background: #f9f9f9;
+  border: 1px solid #e8e8e8;
+}
+
+.cedoc-gallery-toolbar--v1 .card-body {
+  padding: 1.5rem;
+}
+
+/* ========== VERSION 2: COMMERCIAL STYLING ========== */
+
+.cedoc-gallery-toolbar--v2 {
+  background: linear-gradient(135deg, #fafaf8 0%, #fffef9 100%);
+  border: 2px solid #ffd700;
+  box-shadow: 0 4px 16px rgba(255, 215, 0, 0.12);
+}
+
+.cedoc-v2-toolbar-section {
+  padding: 0.5rem 0;
+}
+
+.cedoc-v2-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.cedoc-refine-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.cedoc-refine-search__group .form-control {
+  min-height: 44px;
+}
+
+.cedoc-refine-chip-group {
+  padding: 0.15rem 0;
+}
+
+.cedoc-refine-advanced {
+  border: 1px solid rgba(32, 49, 43, 0.12);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 0.75rem 0.9rem;
+}
+
+.cedoc-refine-advanced__summary {
+  cursor: pointer;
+  font-weight: 800;
+  color: #173f35;
+  list-style: none;
+}
+
+.cedoc-refine-advanced__summary::-webkit-details-marker {
+  display: none;
+}
+
+.cedoc-refine-advanced__body {
+  margin-top: 0.85rem;
+}
+
+.cedoc-refine-advanced .cedoc-filter-select {
+  background: #fff;
+  min-height: 44px;
+}
+
+/* Responsive images used across templates */
+.site-content img,
+.tainacan-collection img,
+.tainacan-item img,
+.entry-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Better focus outline for keyboard users */
+.cedoc-header-nav-item:focus,
+.cedoc-header-layout-links a:focus,
+.cedoc-share-links a:focus {
+  outline: 3px solid rgba(23,63,53,0.12);
+  outline-offset: 2px;
+}
+
+.cedoc-filter-label {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #333;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.cedoc-filter-select {
+  padding: 0.5rem 0.85rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 0.9rem;
+  color: #333;
+  transition: all 200ms ease;
+}
+
+.cedoc-filter-select:hover,
+.cedoc-filter-select:focus {
+  border-color: #ffd700;
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+  outline: none;
+}
+
+.cedoc-v2-sort-row {
+  padding-top: 1rem;
+}
+
+.cedoc-sort-label {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.cedoc-sort-select {
+  padding: 0.45rem 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 0.9rem;
+  color: #333;
+  transition: all 200ms ease;
+}
+
+.cedoc-sort-select:hover,
+.cedoc-sort-select:focus {
+  border-color: #ffd700;
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+  outline: none;
+}
+
+.cedoc-view-toggle .btn {
+  border: 1px solid #ddd;
+  color: #666;
+  background: #fff;
+  padding: 0.4rem 0.7rem;
+  transition: all 200ms ease;
+}
+
+.cedoc-view-toggle .btn.active,
+.cedoc-view-toggle .btn:hover {
+  background: #ffd700;
+  border-color: #ffd700;
+  color: #000;
+}
+
+/* ========== VERSION 3: IMMERSIVE STYLING ========== */
+
+.cedoc-gallery-toolbar--v3 {
+  background: linear-gradient(135deg, rgba(16, 23, 35, 0.02), rgba(240, 165, 45, 0.05));
+  border: 2px solid rgba(240, 165, 45, 0.3);
+  box-shadow: 0 4px 16px rgba(16, 23, 35, 0.08);
+}
+
+.cedoc-v3-toolbar-section {
+  padding: 0.5rem 0;
+}
+
+.cedoc-v3-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(240, 165, 45, 0.2);
+}
+
+.cedoc-chip-label {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #101522;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cedoc-filter-chip {
+  padding: 0.5rem 1rem;
+  border: 2px solid rgba(240, 165, 45, 0.3);
+  background: #fff;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #101522;
+  cursor: pointer;
+  transition: all 200ms ease;
+  white-space: nowrap;
+}
+
+.cedoc-filter-chip:hover {
+  border-color: #f0a52d;
+  background: rgba(240, 165, 45, 0.08);
+}
+
+.cedoc-filter-chip.cedoc-chip-active {
+  background: linear-gradient(135deg, #f0a52d, #f5b841);
+  border-color: #f0a52d;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(240, 165, 45, 0.3);
+}
+
+.cedoc-v3-view-row {
+  padding-top: 1rem;
+}
+
+.cedoc-v3-filter-toggle,
+.cedoc-v3-view-toggle,
+.cedoc-v3-zoom-toggle {
+  border: 2px solid rgba(16, 23, 35, 0.2);
+  color: #101522;
+  background: #fff;
+  font-weight: 600;
+  transition: all 200ms ease;
+}
+
+.cedoc-v3-filter-toggle:hover,
+.cedoc-v3-view-toggle:hover,
+.cedoc-v3-zoom-toggle:hover {
+  border-color: #f0a52d;
+  background: rgba(240, 165, 45, 0.08);
+  color: #101522;
+}
+
+.cedoc-v3-filter-advanced-label {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #101522;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.cedoc-v3-filter-select {
+  border: 1px solid rgba(240, 165, 45, 0.3);
+  border-radius: 6px;
+  background: #fff;
+  color: #101522;
+  transition: all 200ms ease;
+}
+
+.cedoc-v3-filter-select:focus {
+  border-color: #f0a52d;
+  box-shadow: 0 0 0 3px rgba(240, 165, 45, 0.1);
+  outline: none;
+}
+
+/* ========== GALLERY CARD STYLING ========== */
+
+.cedoc-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.cedoc-gallery-card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 300ms ease;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.cedoc-gallery-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.cedoc-gallery-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.cedoc-gallery-card-media {
+  position: relative;
+  overflow: hidden;
+  background: #f5f5f5;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cedoc-gallery-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 300ms ease;
+}
+
+.cedoc-gallery-card:hover .cedoc-gallery-card-media img {
+  transform: scale(1.08);
+}
+
+/* V2 top menu: slim, transparent and compact */
+.navbar.cedoc-header--v2 {
+  background: rgba(255, 255, 255, 0.56) !important;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border-bottom: 1px solid rgba(16, 21, 34, 0.08) !important;
+  min-height: 46px !important;
+  padding-top: 0.12rem !important;
+  padding-bottom: 0.12rem !important;
+}
+
+.cedoc-header--v2 #topNavbar {
+  margin: 0 !important;
+  max-width: 100% !important;
+  padding-left: 0.25rem !important;
+  padding-right: 0.25rem !important;
+}
+
+.cedoc-header--v2 .cedoc-header-rail--commercial {
+  display: none;
+}
+
+.cedoc-header--v2 .cedoc-header-shell--v2 {
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.cedoc-header--v2 .cedoc-header-shell--v2 {
+  justify-content: space-between;
+}
+
+.cedoc-header--v2 .cedoc-header-nav--v2 { order: 1; }
+.cedoc-header--v2 .cedoc-header-search--v2 { order: 2; margin-left: auto; }
+
+.cedoc-header--v2 .cedoc-header-nav--v2 {
+  gap: 0.3rem;
+  flex: 1 1 auto;
+}
+
+.cedoc-header--v2 .cedoc-header-nav--v2 .cedoc-header-nav-item {
+  padding: 0.38rem 0.68rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  line-height: 1.1;
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.cedoc-header--v2 .cedoc-header-search--v2 {
+  min-width: 230px;
+  max-width: 280px;
+  margin-left: 0.35rem;
+}
+
+.cedoc-header--v2 .cedoc-header-search--v2 .search-form {
+  margin: 0;
+}
+
+.cedoc-header--v2 .cedoc-header-search--v2 .form-control {
+  min-height: 34px;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+
+/* V2 blocks below carousel */
+.cedoc-v2-categories {
+  margin-top: 1rem;
+}
+
+.cedoc-v2-categories-head {
+  margin-bottom: 0.9rem;
+}
+
+.cedoc-v2-categories-head h2 {
+  margin: 0;
+  font-size: 1.45rem;
+  color: #101522;
+}
+
+.cedoc-v2-categories-head p {
+  margin: 0.25rem 0 0;
+  color: #55606f;
+}
+
+.cedoc-v2-category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.cedoc-v2-category-card {
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(16, 21, 34, 0.08);
+}
+
+.cedoc-v2-category-card__link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.cedoc-v2-category-card__media {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  background-color: #e9ecef;
+}
+
+.cedoc-v2-category-card__body {
+  padding: 0.85rem;
+}
+
+.cedoc-v2-category-card__body h3 {
+  font-size: 1rem;
+  margin: 0 0 0.35rem;
+  color: #0f1a29;
+}
+
+.cedoc-v2-category-card__body p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #4a5563;
+  min-height: 2.6em;
+}
+
+.cedoc-v2-category-card__cta {
+  display: inline-block;
+  margin-top: 0.55rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #173f35;
+}
+
+@media (max-width: 991.98px) {
+  .cedoc-header--v2 .cedoc-header-shell--v2 {
+    flex-wrap: wrap;
+  }
+
+  .cedoc-header--v2 .cedoc-header-search--v2 {
+    max-width: 100%;
+    min-width: 100%;
+    margin-left: 0;
+  }
+}
+
+.cedoc-gallery-card-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cedoc-gallery-card-kicker {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #f0a52d;
+  font-weight: 700;
+}
+
+.cedoc-gallery-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.cedoc-gallery-card-excerpt {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+/* Version 2: Commercial card styling */
+.cedoc-gallery-toolbar--v2 ~ .cedoc-gallery-grid .cedoc-gallery-card {
+  border: 2px solid rgba(255, 215, 0, 0.2);
+}
+
+.cedoc-gallery-toolbar--v2 ~ .cedoc-gallery-grid .cedoc-gallery-card:hover {
+  border-color: #ffd700;
+  box-shadow: 0 8px 24px rgba(255, 215, 0, 0.2);
+}
+
+.cedoc-gallery-toolbar--v2 ~ .cedoc-gallery-grid .cedoc-gallery-card-kicker {
+  color: #ffd700;
+}
+
+/* Version 3: Immersive card styling */
+.cedoc-gallery-toolbar--v3 ~ .cedoc-gallery-grid .cedoc-gallery-card {
+  border: 2px solid rgba(240, 165, 45, 0.25);
+  background: linear-gradient(135deg, #fafaf8, #fff);
+}
+
+.cedoc-gallery-toolbar--v3 ~ .cedoc-gallery-grid .cedoc-gallery-card:hover {
+  border-color: #f0a52d;
+  box-shadow: 0 8px 24px rgba(240, 165, 45, 0.25);
+}
+
+.cedoc-gallery-toolbar--v3 ~ .cedoc-gallery-grid .cedoc-gallery-card-kicker {
+  color: #101522;
+  background: rgba(240, 165, 45, 0.1);
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  display: inline-block;
+  width: fit-content;
+}
+
+/* ========== PAGINATION STYLING ========== */
+
+.cedoc-gallery-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.cedoc-gallery-pagination a,
+.cedoc-gallery-pagination span {
+  padding: 0.6rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #333;
+  transition: all 200ms ease;
+  font-weight: 600;
+}
+
+.cedoc-gallery-pagination a:hover {
+  background: #f0a52d;
+  border-color: #f0a52d;
+  color: #fff;
+}
+
+.cedoc-gallery-pagination .page-numbers.current {
+  background: #173f35;
+  border-color: #173f35;
+  color: #fff;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+@media (max-width: 1024px) {
+  .cedoc-gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .cedoc-v2-sort-row,
+  .cedoc-v3-view-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cedoc-v2-sort-row select,
+  .cedoc-v3-view-row button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .cedoc-gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+
+  .cedoc-gallery-toolbar .card-body {
+    padding: 1rem;
+  }
+
+  .cedoc-v2-filter-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .cedoc-v2-filter-row .cedoc-filter-select {
+    width: 100%;
+  }
+
+  .cedoc-v3-filter-chips {
+    font-size: 0.8rem;
+  }
+
+  .cedoc-v3-filter-chips button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .cedoc-gallery-card-title {
+    font-size: 0.95rem;
+  }
+
+  .cedoc-gallery-card-excerpt {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .cedoc-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cedoc-gallery-archive-header h1 {
+    font-size: 2rem !important;
+  }
+
+  .cedoc-v3-view-row {
+    flex-direction: column;
+  }
+
+  .cedoc-v3-view-row button {
+    width: 100%;
+  }
+}

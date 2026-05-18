@@ -1,11 +1,10 @@
-<form role="search" method="post" name="tainacan-search-form" class="search-form" onsubmit="return onTainacanSearchSubmit()" style="margin-block-end: 0px;">
-	<div class="input-group">
-		<input class="form-control py-2" type="search" name="s" placeholder="<?php esc_attr_e( 'Search', 'tainacan-interface' ); ?>" id="tainacan-search">
-		<span class="input-group-append d-none d-md-block">
-			<button class="btn btn-outline-secondary bg-white" type="submit">
-				<i class="tainacan-icon tainacan-icon-search" style="line-height: inherit;"></i>
-			</button>
-		</span>
+<form role="search" method="get" name="tainacan-search-form" class="search-form cedoc-inline-search" onsubmit="return onTainacanSearchSubmit()" style="margin-block-end: 0px;">
+	<label class="sr-only" for="tainacan-search"><?php esc_html_e( 'Search', 'tainacan-interface' ); ?></label>
+	<div class="cedoc-inline-search__field">
+		<input class="form-control py-2" type="search" name="s" placeholder="<?php esc_attr_e( 'Buscar no acervo', 'tainacan-interface' ); ?>" id="tainacan-search">
+		<button class="btn btn-outline-secondary bg-white" type="submit" aria-label="<?php esc_attr_e( 'Search', 'tainacan-interface' ); ?>">
+			<i class="tainacan-icon tainacan-icon-search" style="line-height: inherit;"></i>
+		</button>
 	</div>
 	<?php if ( defined ( 'TAINACAN_VERSION' ) ): ?>
 		<div class="search-controls" <?php echo (get_theme_mod('tainacan_search_on_items', false) || get_theme_mod('tainacan_search_on_collections', false) || get_theme_mod('tainacan_search_on_posts', false) ) ? '' : 'style="display:none;visibility:hidden;"'; ?>>

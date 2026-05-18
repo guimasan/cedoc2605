@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canvas Handoff - CEACA CEDOC</title>
+  <style>
+    :root {
+      --bg: #eef3ef;
+      --panel: #ffffff;
+      --ink: #203029;
+      --muted: #62706a;
+      --line: rgba(32, 48, 41, 0.12);
+      --accent: #1f5c4b;
+      --accent-2: #a06a2a;
+      --shadow: 0 24px 60px rgba(20, 32, 28, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(31, 92, 75, 0.12), transparent 22%),
+        radial-gradient(circle at 85% 5%, rgba(160, 106, 42, 0.12), transparent 24%),
+        var(--bg);
+    }
+
+    .wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 40px 20px 56px;
+    }
+
+    .hero {
+      padding: 28px;
+      border-radius: 30px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.72rem;
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.4rem, 5vw, 4.8rem);
+      line-height: 0.95;
+      margin: 16px 0 14px;
+      max-width: 10ch;
+    }
+
+    .lede {
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 68ch;
+    }
+
+    .panel {
+      padding: 18px;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #fff, rgba(255, 255, 255, 0.76));
+      display: grid;
+      gap: 12px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .button {
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 12px 16px;
+      font-weight: 700;
+      border: 1px solid var(--line);
+      color: var(--ink);
+      background: #fff;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: transparent;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .card {
+      padding: 22px;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 { margin-bottom: 12px; }
+
+    .meta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .meta span {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .section {
+      margin-top: 22px;
+      padding: 24px;
+      border-radius: 28px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.84);
+      box-shadow: var(--shadow);
+    }
+
+    .rows {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      padding: 14px 16px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.74);
+    }
+
+    .row strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .row a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .footer {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">Canvas handoff</span>
+        <h1>Pacote organizado para exportação das 3 versões.</h1>
+        <p class="lede">Esta área reúne os protótipos em um formato direto para o time de design, com links, descrição das direções e um manifest simples para abrir, comparar e transportar para canvas.</p>
+        <div class="actions">
+          <a class="button primary" href="../index.html">Voltar ao hub</a>
+          <a class="button" href="./prototypes-manifest.json">Abrir manifest</a>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>Resumo do pacote</h2>
+        <p>3 protótipos independentes, 1 hub comparativo, 1 manifest de handoff e descrições curtas para orientar exportação e continuidade no canvas.</p>
+        <div class="meta">
+          <span>layout editorial</span>
+          <span>layout atlas</span>
+          <span>layout imersivo</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <span class="eyebrow">Protótipo 1</span>
+        <h3>Direção museológica</h3>
+        <p>Mais quente, editorial e documental. Bom para um site institucional com leitura longa e foco em memória.</p>
+        <div class="meta"><span>site-demo/prototipos/prototipo-1/</span></div>
+      </article>
+      <article class="card">
+        <span class="eyebrow">Protótipo 2</span>
+        <h3>Direção atlas</h3>
+        <p>Mais modular, clara e informativa. Bom para navegação por catálogo, organização e comparação de conteúdo.</p>
+        <div class="meta"><span>site-demo/prototipos/prototipo-2/</span></div>
+      </article>
+      <article class="card">
+        <span class="eyebrow">Protótipo 3</span>
+        <h3>Direção imersiva</h3>
+        <p>Mais dramática, contrastada e contemporânea. Bom para apresentação, exposição digital e impacto visual.</p>
+        <div class="meta"><span>site-demo/prototipos/prototipo-3/</span></div>
+      </article>
+    </section>
+
+    <section class="section">
+      <span class="eyebrow">Arquivos</span>
+      <h2>Estrutura de entrega</h2>
+      <div class="rows">
+        <div class="row">
+          <div>
+            <strong>Hub comparativo</strong>
+            <span>Ponto de entrada para navegar entre as três versões.</span>
+          </div>
+          <a href="../index.html">Abrir</a>
+        </div>
+        <div class="row">
+          <div>
+            <strong>Manifest</strong>
+            <span>Resumo em JSON com paths, direções e notas de cada variante.</span>
+          </div>
+          <a href="./prototypes-manifest.json">Abrir</a>
+        </div>
+        <div class="row">
+          <div>
+            <strong>README</strong>
+            <span>Guia curto de uso para exportar, comparar e repassar ao design.</span>
+          </div>
+          <a href="./README.md">Abrir</a>
+        </div>
+      </div>
+      <div class="footer">Pensado para ser copiado para canvas, board ou pasta de handoff sem dependência do tema principal.</div>
+    </section>
+  </div>
+</body>
+</html>

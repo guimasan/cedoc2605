@@ -6,15 +6,37 @@
   <title>CEACA CEDOC - Demo Local</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <header>
-    <h1>CEACA CEDOC</h1>
-    <nav>
-      <a href="index.html">Início</a>
-      <a href="catalogo.html">Catálogo</a>
-      <a href="sobre.html">Sobre</a>
-      <a href="contato.html">Contato</a>
-    </nav>
+<body data-image-base="assets/images/">
+ 
+  <header class="versions-topbar" aria-label="Navegação entre versões">
+    <a href="versoes/index.html">Hub</a>
+    <a class="active" href="index.html">Versão 1</a>
+    <a href="versoes/versao-2/index.html">Versão 2</a>
+    <a href="versoes/versao-3/index.html">Versão 3</a>
+  </header>
+  <header class="site-header">
+    <div class="brand-block">
+      <span class="eyebrow">CEACA CEDOC</span>
+      <h1>Portal do acervo</h1>
+      <p>Uma navegação com categorias, busca e compartilhamento social para o conteúdo do CEACA.</p>
+    </div>
+    <div class="menu-stack">
+      <nav class="category-nav" aria-label="Categorias do acervo">
+        <a href="sobre.html#ceaca-sobre-nos">CEACA Sobre nós</a>
+        <a href="catalogo.html#educacao">Educação e Cultura Tradicional</a>
+        <a href="catalogo.html#articulacao">Articulação</a>
+        <a href="catalogo.html#saberes">Documentação de Saberes</a>
+        <a href="catalogo.html#manifestacoes">Manifestações culturais</a>
+      </nav>
+      <div class="search-row">
+        <form class="search-form" action="catalogo.html" method="get">
+          <label class="sr-only" for="home-search">Buscar no acervo</label>
+          <input id="home-search" name="q" type="search" placeholder="Buscar no acervo">
+          <button type="submit" aria-label="Buscar">⌕</button>
+        </form>
+        <a class="pill-link" href="versoes/index.html">Comparar versões</a>
+      </div>
+    </div>
   </header>
   <main>
     <section>
@@ -22,12 +44,12 @@
       <p>O Centro de Estudos e Aplicação da Capoeira (CEACA) é uma associação sem fins lucrativos dedicada à promoção da Capoeira e das culturas tradicionais afro-brasileiras. O CEDOC organiza e preserva um acervo documental rico, estruturado em grandes áreas temáticas:</p>
       <div class="home-categorias">
         <div class="cat-box">
-          <h3><a href="catalogo.html#educacao">Educação e Cultura Tradicional</a></h3>
-          <p>Documentos sobre capoeira e culturas tradicionais como práticas pedagógicas, projetos educacionais, políticas públicas, registros de mestres e tradição oral, e identidade cultural.</p>
+          <h3><a href="sobre.html#ceaca-sobre-nos">CEACA Sobre nós</a></h3>
+          <p>Conheça a trajetória, a missão institucional e o trabalho de memória que sustenta o CEACA.</p>
         </div>
         <div class="cat-box">
-          <h3><a href="catalogo.html#ceaca">CEACA</a></h3>
-          <p>Produções, registros históricos, aprendizes, eventos, materiais didáticos e homenagens ao Mestre Alcides, contando a trajetória do CEACA.</p>
+          <h3><a href="catalogo.html#educacao">Educação e Cultura Tradicional</a></h3>
+          <p>Documentos sobre capoeira e culturas tradicionais como práticas pedagógicas, projetos educacionais, políticas públicas, registros de mestres e tradição oral, e identidade cultural.</p>
         </div>
         <div class="cat-box">
           <h3><a href="catalogo.html#articulacao">Articulação</a></h3>
@@ -42,11 +64,30 @@
           <p>Registros de práticas da capoeira, danças, festas, rituais e apresentações culturais documentadas pelo CEACA e parceiros.</p>
         </div>
       </div>
+      <div class="random-gallery" aria-label="Destaques do acervo">
+        <img data-random="true" src="assets/images/capa.png" alt="Destaque do acervo 1">
+        <img data-random="true" src="assets/images/section_default.png" alt="Destaque do acervo 2">
+        <img data-random="true" src="assets/images/section_tabs.png" alt="Destaque do acervo 3">
+      </div>
       <p style="margin-top:1.5rem;">Explore o <a href="catalogo.html">Catálogo</a> para conhecer todas as categorias e acessar o acervo completo.</p>
+    </section>
+    <section class="share-bar" data-share-bar>
+      <div>
+        <strong>Compartilhar esta página</strong>
+        <span>Leve a navegação do CEACA para suas redes.</span>
+      </div>
+      <div class="share-links">
+        <a data-share-network="whatsapp" target="_blank" rel="noreferrer noopener" href="#">WhatsApp</a>
+        <a data-share-network="facebook" target="_blank" rel="noreferrer noopener" href="#">Facebook</a>
+        <a data-share-network="linkedin" target="_blank" rel="noreferrer noopener" href="#">LinkedIn</a>
+        <a data-share-network="x" target="_blank" rel="noreferrer noopener" href="#">X</a>
+      </div>
     </section>
   </main>
   <footer>
     <p>&copy; 2026 CEACA CEDOC. E-mail: capoeiraceaca@gmail.com</p>
   </footer>
+  <script src="shared/share.js"></script>
+  <script src="shared/random-images.js"></script>
 </body>
 </html>

@@ -1,0 +1,28 @@
+{
+  "project": "CEACA CEDOC",
+  "package": "canvas-handoff",
+  "generated": "2026-05-13",
+  "variants": [
+    {
+      "id": "prototipo-1",
+      "title": "Direção museológica",
+      "path": "../prototipo-1/index.html",
+      "style": "../prototipo-1/style.css",
+      "keywords": ["editorial", "terroso", "institucional", "memória"]
+    },
+    {
+      "id": "prototipo-2",
+      "title": "Direção atlas",
+      "path": "../prototipo-2/index.html",
+      "style": "../prototipo-2/style.css",
+      "keywords": ["modular", "catálogo", "legibilidade", "organização"]
+    },
+    {
+      "id": "prototipo-3",
+      "title": "Direção imersiva",
+      "path": "../prototipo-3/index.html",
+      "style": "../prototipo-3/style.css",
+      "keywords": ["alto contraste", "experimental", "exposição", "impacto"]
+    }
+  ]
+}

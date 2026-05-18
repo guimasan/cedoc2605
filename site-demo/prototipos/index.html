@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protótipos - CEACA CEDOC</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f2efe7;
+      --panel: #fffaf2;
+      --ink: #24312d;
+      --muted: #66746f;
+      --line: rgba(36, 49, 45, 0.12);
+      --accent: #9a6a2f;
+      --accent-2: #173f35;
+      --shadow: 0 24px 60px rgba(28, 40, 36, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(154, 106, 47, 0.16), transparent 34%),
+        radial-gradient(circle at 85% 10%, rgba(23, 63, 53, 0.12), transparent 26%),
+        var(--bg);
+      color: var(--ink);
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 40px 20px 56px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    h1, h2, h3, p {
+      margin-top: 0;
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      line-height: 0.95;
+      margin: 18px 0 14px;
+      max-width: 10ch;
+    }
+
+    .lede {
+      max-width: 68ch;
+      color: var(--muted);
+      font-size: 1.06rem;
+      line-height: 1.7;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 28px;
+    }
+
+    .card {
+      background: rgba(255, 250, 242, 0.9);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 22px;
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-card {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--ink);
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .nav-links a.active {
+      background: var(--accent-2);
+      color: #fff;
+      border-color: transparent;
+    }
+
+    .intro {
+      grid-column: 1 / span 7;
+      padding: 6px 2px;
+    }
+
+    .overview {
+      grid-column: 8 / -1;
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+
+    .mini {
+      display: grid;
+      gap: 6px;
+      padding: 18px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, #fff, rgba(255, 255, 255, 0.78));
+      border: 1px solid var(--line);
+    }
+
+    .mini strong {
+      font-size: 1.2rem;
+    }
+
+    .mini span {
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .prototype-grid {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .prototype-link {
+      display: grid;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+      min-height: 260px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .prototype-link::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 24px;
+      border: 1px solid transparent;
+      transition: transform 180ms ease, border-color 180ms ease;
+      pointer-events: none;
+    }
+
+    .prototype-link:hover::after {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .thumb {
+      min-height: 140px;
+      border-radius: 18px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: #fff;
+    }
+
+    .thumb h3 {
+      margin-bottom: 0;
+      font-size: 1.35rem;
+    }
+
+    .thumb p {
+      color: rgba(255, 255, 255, 0.84);
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+
+    .p1 { background: linear-gradient(135deg, #173f35, #356450); }
+    .p2 { background: linear-gradient(135deg, #25344a, #637a90); }
+    .p3 { background: linear-gradient(135deg, #171928, #af6d22); }
+
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-note {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 980px) {
+      .intro, .overview, .prototype-grid { grid-column: 1 / -1; }
+      .prototype-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <span class="eyebrow">CEACA CEDOC • biblioteca de protótipos</span>
+    <h1>3 direções visuais para o site.</h1>
+    <p class="lede">Esta entrada reúne as três variações estáticas do projeto para comparação rápida, exportação e evolução por design. Cada proposta mantém o conteúdo do CEACA/CEDOC, mas muda hierarquia, atmosfera e composição.</p>
+
+    <section class="grid">
+      <div class="card nav-card">
+        <div>
+          <strong>Comparar versões</strong>
+          <div class="meta">Acesse uma proposta por vez e avalie layout, densidade e tom visual.</div>
+        </div>
+        <div class="nav-links">
+          <a class="active" href="./">Hub</a>
+          <a href="prototipo-1/index.html">Protótipo 1</a>
+          <a href="prototipo-2/index.html">Protótipo 2</a>
+          <a href="prototipo-3/index.html">Protótipo 3</a>
+          <a href="canvas-handoff/index.html">Canvas</a>
+        </div>
+      </div>
+
+      <div class="intro">
+        <h2>O que muda entre elas</h2>
+        <p class="lede">A primeira proposta é editorial e acolhedora, a segunda é mais institucional e modular, e a terceira é mais ousada e imersiva. As três foram pensadas para funcionar como base de exportação para canvas e refinamento posterior.</p>
+      </div>
+
+      <div class="overview">
+        <div class="mini">
+          <strong>Base comum</strong>
+          <span>Menu, hero, acervo, sobre e contato aparecem em todas as versões, mas com ordem visual diferente.</span>
+        </div>
+        <div class="mini">
+          <strong>Pronto para exportar</strong>
+          <span>Os protótipos vivem em pastas separadas para facilitar handoff e comparação lado a lado.</span>
+        </div>
+      </div>
+
+      <div class="prototype-grid">
+        <a class="card prototype-link" href="prototipo-1/index.html">
+          <div class="thumb p1">
+            <h3>Protótipo 1</h3>
+            <p>Editorial, quente e institucional. Boa leitura, blocos amplos e foco na memória do acervo.</p>
+          </div>
+          <div>
+            <strong>Direção museológica</strong>
+            <div class="meta"><span>tons terrosos</span><span>cards amplos</span><span>hero narrativo</span></div>
+          </div>
+        </a>
+
+        <a class="card prototype-link" href="prototipo-2/index.html">
+          <div class="thumb p2">
+            <h3>Protótipo 2</h3>
+            <p>Minimalista e informativo. Estrutura em camadas, grande respiro e leitura orientada por módulos.</p>
+          </div>
+          <div>
+            <strong>Direção atlas</strong>
+            <div class="meta"><span>grids finos</span><span>alta legibilidade</span><span>interface limpa</span></div>
+          </div>
+        </a>
+
+        <a class="card prototype-link" href="prototipo-3/index.html">
+          <div class="thumb p3">
+            <h3>Protótipo 3</h3>
+            <p>Mais dramático e contemporâneo. Contraste alto, blocos sobrepostos e atmosfera de exposição.</p>
+          </div>
+          <div>
+            <strong>Direção imersiva</strong>
+            <div class="meta"><span>alto contraste</span><span>formas ousadas</span><span>layout experimental</span></div>
+          </div>
+        </a>
+      </div>
+
+      <div class="footer-note">
+        <span>Arquivos em: site-demo/prototipos/</span>
+        <span>Próximo passo: abrir o pacote Canvas para exportar e distribuir as versões.</span>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

@@ -58,11 +58,16 @@
 						<div class="skeleton"></div> 
 					</a>
 				<?php else : ?>
+					<?php $fallback_image = function_exists( 'cedoc_get_random_item_image' ) ? cedoc_get_random_item_image() : ''; ?>
 					<a 
 							href="<?php echo get_item_link_for_navigation(get_permalink(), $item_index); ?>"
-							style="background-image: url(<?php echo esc_url( get_template_directory_uri() ) . '/assets/images/thumbnail_placeholder.png'?>)"
+							style="background-image: url(<?php echo esc_url( $fallback_image ? $fallback_image : get_template_directory_uri() . '/assets/images/thumbnail_placeholder.png' ); ?>)"
 							class="grid-item-thumbnail">
-						<?php echo '<img alt="', esc_attr_e('Thumbnail placeholder', 'tainacan-interface'), '" src="', esc_url(get_template_directory_uri()), '/assets/images/thumbnail_placeholder.png">'?>
+							<?php if ( $fallback_image ) : ?>
+								<img alt="<?php esc_attr_e( 'Imagem aleatória do acervo', 'tainacan-interface' ); ?>" src="<?php echo esc_url( $fallback_image ); ?>">
+							<?php else : ?>
+								<?php echo '<img alt="', esc_attr_e('Thumbnail placeholder', 'tainacan-interface'), '" src="', esc_url(get_template_directory_uri()), '/assets/images/thumbnail_placeholder.png">'?>
+							<?php endif; ?>
 						<div class="skeleton"></div> 
 					</a>
 				<?php endif; ?>  

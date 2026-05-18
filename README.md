@@ -24,6 +24,12 @@ Projeto WordPress + Tainacan do CEACA/CEDOC, preparado para usar a mesma base de
 4. Validar a home, categorias e subcategorias.
 5. Publicar o código deste repositório no GitHub como `CEACA-CEDOC`.
 
+## Publicação no GitHub Pages
+
+- A entrada pública do repositório fica em `index.html` na raiz.
+- O demo navegável continua em `site-demo/`, com as páginas home, catálogo, sobre, contato e hub de versões.
+- Para publicar no GitHub Pages, aponte a origem do Pages para a raiz do repositório ou para a branch que contenha este `index.html`.
+
 ## Estrutura principal
 
 - `docker-compose.yml` - ambiente local de desenvolvimento
