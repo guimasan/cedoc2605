@@ -59,6 +59,10 @@ if ( ! function_exists( 'tainacan_enqueues' ) ) {
 		// CEDOC Layout Variants (header/menu/toolbars)
 		wp_register_style( 'cedoc_variants', get_template_directory_uri() . '/assets/css/cedoc-variants.css', array( 'tainacan_tainacanStyle' ), filemtime( get_template_directory() . '/assets/css/cedoc-variants.css' ) );
 		wp_enqueue_style( 'cedoc_variants' );
+
+		// CEDOC architecture-style v3 layout
+		wp_register_style( 'cedoc_architecture', get_template_directory_uri() . '/assets/css/cedoc-architecture.css', array( 'cedoc_variants' ), filemtime( get_template_directory() . '/assets/css/cedoc-architecture.css' ) );
+		wp_enqueue_style( 'cedoc_architecture' );
 		
 		// CEDOC Accordion Script
 		wp_register_script( 'cedoc_accordion_script', get_template_directory_uri() . '/assets/js/cedoc-accordion.js', array(), TAINACAN_INTERFACE_VERSION, true );

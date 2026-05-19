@@ -3,171 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="0; url=versao%203/index.html">
   <title>CEACA CEDOC</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff5ec;
+      color: #7c2f14;
+    }
+    a {
+      color: inherit;
+    }
+  </style>
 </head>
 <body>
-  <div class="site-shell">
-    <header class="site-header">
-      <a class="brand" href="index.html" aria-label="Ir para a página inicial">
-        <img src="assets/images/logo.svg" alt="CEACA">
-        <span class="brand-text">
-          <span class="brand-kicker">CEACA CEDOC</span>
-          <strong>Centro de Estudos e Aplicação da Capoeira</strong>
-        </span>
-      </a>
-      <nav class="site-nav" aria-label="Navegação principal">
-        <a class="active" href="index.html">Sobre nós</a>
-        <a href="catalogo.html">Acervo</a>
-        <a href="contato.html">Contato</a>
-        <a href="contato.html#redes-sociais">Redes Sociais</a>
-      </nav>
-      <form class="searchbar" action="catalogo.html" method="get">
-        <label class="sr-only" for="search-home">Buscar no acervo</label>
-        <input id="search-home" name="q" type="search" placeholder="Buscar no acervo">
-        <button type="submit" aria-label="Buscar">🔍</button>
-      </form>
-    </header>
-  </div>
-
-  <main>
-    <section class="site-shell">
-      <section class="hero">
-        <div class="hero-copy">
-          <span class="eyebrow">CENTRO DE ESTUDOS E APLICAÇÃO DA CAPOEIRA</span>
-          <h1>O que é o Acervo CEDOC</h1>
-          <p class="hero-intro">Uma proposta visual inspirada no canvas, com navegação clara para sobre nós, acervo e contato, além de um bloco central para busca, categorias e solicitação de conteúdo.</p>
-          <div class="hero-cta">
-            <a class="button primary" href="catalogo.html">Abrir acervo</a>
-            <a class="button secondary" href="sobre.html">Sobre nós</a>
-          </div>
-          <div class="chip-cloud" aria-label="Temas principais">
-            <span class="chip active">parcerias</span>
-            <span class="chip">contribua</span>
-            <span class="chip">história CEACA</span>
-            <span class="chip">publicações</span>
-            <span class="chip">projetos</span>
-          </div>
-        </div>
-
-        <div class="hero-visual">
-          <img src="assets/images/capa.png" alt="CEACA CEDOC">
-          <div class="hero-overlay">
-            <div class="mini-grid">
-              <article class="mini-card">
-                <span class="card-kicker">busca</span>
-                <h3>Busca rápida</h3>
-                <p>Localize documentos, imagens e registros com filtros simples.</p>
-              </article>
-              <article class="mini-card">
-                <span class="card-kicker">categorias</span>
-                <h3>Categorias do acervo</h3>
-                <p>Navegue por temas, coleções e frentes de documentação.</p>
-              </article>
-              <article class="mini-card">
-                <span class="card-kicker">solicitação de conteúdo</span>
-                <h3>Conteúdo sob demanda</h3>
-                <p>Envie pedidos de consulta, reprodução e apoio à pesquisa.</p>
-              </article>
-              <article class="mini-card">
-                <span class="card-kicker">acervo CEDOC</span>
-                <h3>Acervo organizado</h3>
-                <p>Uma entrada pública para memória, pesquisa e difusão cultural.</p>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-card">
-        <div class="section-heading">
-          <div>
-            <span class="section-kicker">o que é o Acervo CEDOC</span>
-            <h2>Estrutura para leitura institucional e navegação direta.</h2>
-          </div>
-          <a class="button secondary" href="catalogo.html">Ver catálogo completo</a>
-        </div>
-        <div class="info-grid">
-          <article class="info-card">
-            <span class="card-kicker">busca</span>
-            <h3>Pesquisa no acervo</h3>
-            <p>Entrada única para documentos, imagens, projetos, editais e publicações.</p>
-          </article>
-          <article class="info-card">
-            <span class="card-kicker">categorias</span>
-            <h3>Navegação por temas</h3>
-            <p>Organização por grupos como história CEACA, pedagogia, gestão atual e reconhecimentos.</p>
-          </article>
-          <article class="info-card">
-            <span class="card-kicker">solicitação de conteúdo</span>
-            <h3>Pedidos e contribuições</h3>
-            <p>Canal para solicitar arquivos, sugerir materiais e contribuir com o acervo.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section-card">
-        <div class="section-heading">
-          <div>
-            <span class="section-kicker">Temas do acervo</span>
-            <h2>Capas, páginas e registros visuais para cada frente do CEDOC.</h2>
-          </div>
-          <span class="eyebrow">parcerias / contribua</span>
-        </div>
-        <div class="topic-grid">
-          <article class="topic-card"><h3>história CEACA</h3><p>Memória institucional e trajetória do grupo.</p></article>
-          <article class="topic-card"><h3>propósito / valores</h3><p>Diretrizes éticas, pedagógicas e comunitárias.</p></article>
-          <article class="topic-card"><h3>pessoas / equipe</h3><p>Colaboradores, mestres, aprendizes e parceiros.</p></article>
-          <article class="topic-card"><h3>pedagogia CEACA</h3><p>Processos formativos, oficinas e abordagens educativas.</p></article>
-          <article class="topic-card"><h3>gestão atual</h3><p>Atualizações institucionais e administração do acervo.</p></article>
-          <article class="topic-card"><h3>reconhecimentos</h3><p>Prêmios, menções e marcos públicos.</p></article>
-          <article class="topic-card"><h3>publicações</h3><p>Livros, artigos, boletins e materiais de difusão.</p></article>
-          <article class="topic-card"><h3>projetos</h3><p>Projetos culturais, educacionais e de documentação.</p></article>
-          <article class="topic-card"><h3>editais</h3><p>Chamadas, seleções e inscrições vinculadas ao CEACA.</p></article>
-          <article class="topic-card"><h3>EMEF Amorim Lima</h3><p>Relacionamentos e experiências com a rede escolar.</p></article>
-          <article class="topic-card"><h3>parcerias</h3><p>Redes, apoios e articulações institucionais.</p></article>
-          <article class="topic-card"><h3>contato</h3><p>Canal oficial para falar com a equipe.</p></article>
-        </div>
-      </section>
-
-      <section class="section-card">
-        <div class="section-heading">
-          <div>
-            <span class="section-kicker">Imagens do acervo</span>
-            <h2>Galeria para mostrar a identidade visual do projeto.</h2>
-          </div>
-          <a class="button secondary" href="contato.html">Solicitar conteúdo</a>
-        </div>
-        <div class="gallery-grid">
-          <a class="gallery-card" href="catalogo.html"><div class="gallery-card__thumb"><img src="assets/images/capa.png" alt="Imagem 1"></div><div class="gallery-card__body"><h3>Data: 30/06/2022</h3><p>Registro de apresentação</p></div></a>
-          <a class="gallery-card" href="catalogo.html"><div class="gallery-card__thumb"><img src="assets/images/section_default.png" alt="Imagem 2"></div><div class="gallery-card__body"><h3>Data: 30/06/2022</h3><p>Documento de apoio</p></div></a>
-          <a class="gallery-card" href="catalogo.html"><div class="gallery-card__thumb"><img src="assets/images/section_tabs.png" alt="Imagem 3"></div><div class="gallery-card__body"><h3>Data: 30/06/2022</h3><p>Conjunto temático</p></div></a>
-          <a class="gallery-card" href="catalogo.html"><div class="gallery-card__thumb"><img src="assets/images/section_accordion.png" alt="Imagem 4"></div><div class="gallery-card__body"><h3>Data: 30/06/2022</h3><p>Arquivo visual</p></div></a>
-          <a class="gallery-card" href="catalogo.html"><div class="gallery-card__thumb"><img src="assets/images/logo.svg" alt="Imagem 5"></div><div class="gallery-card__body"><h3>Data: 30/06/2022</h3><p>Marca institucional</p></div></a>
-          <a class="gallery-card" href="catalogo.html"><div class="gallery-card__thumb"><img src="assets/images/logo-footer.svg" alt="Imagem 6"></div><div class="gallery-card__body"><h3>Data: 30/06/2022</h3><p>Assinatura visual</p></div></a>
-          <a class="gallery-card" href="catalogo.html"><div class="gallery-card__thumb"><img src="assets/images/capa.png" alt="Imagem 7"></div><div class="gallery-card__body"><h3>Data: 30/06/2022</h3><p>Imagem de referência</p></div></a>
-          <a class="gallery-card" href="catalogo.html"><div class="gallery-card__thumb"><img src="assets/images/section_default.png" alt="Imagem 8"></div><div class="gallery-card__body"><h3>Data: 30/06/2022</h3><p>Imagem de referência</p></div></a>
-        </div>
-      </section>
-    </section>
-  </main>
-
-  <footer class="footer-shell">
-    <div class="footer">
-      <div class="footer-share">
-        <div>
-          <strong>Compartilhar esta página</strong>
-          <span>Leve a navegação do CEACA para suas redes.</span>
-        </div>
-        <div class="footer-share-links contact-links">
-          <a href="mailto:capoeiraceaca@gmail.com">E-mail</a>
-          <a href="https://wa.me/?text=CEACA%20CEDOC" target="_blank" rel="noreferrer noopener">WhatsApp</a>
-          <a href="https://www.facebook.com" target="_blank" rel="noreferrer noopener">Facebook</a>
-          <a href="https://www.instagram.com" target="_blank" rel="noreferrer noopener">Instagram</a>
-        </div>
-      </div>
-      <p>© 2026 CEACA CEDOC. E-mail: capoeiraceaca@gmail.com</p>
-    </div>
-  </footer>
+  <p>Redirecionando para a versão atual do demo. Se isso não acontecer, <a href="versao%203/index.html">abra a página aqui</a>.</p>
 </body>
 </html>

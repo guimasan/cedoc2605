@@ -12,6 +12,7 @@ services:
       WORDPRESS_DB_NAME: tainacan
     volumes:
       - wordpress_data:/var/www/html
+      - ./.deploy/wp-content/themes/tainacan-interface:/var/www/html/wp-content/themes/tainacan-interface
   db:
     image: mysql:5.7
     restart: always

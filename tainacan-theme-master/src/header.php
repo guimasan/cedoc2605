@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<?php
+/**
+ * The header for our theme
+ *
+ * @package Tainacan_Interface
+ */
+
+?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -8,11 +15,6 @@
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php endif; ?>
 	<?php wp_head(); ?>
-	<?php
-	// Increase execution time for heavy pages while debugging locally
-	@ini_set( 'max_execution_time', '120' );
-	@set_time_limit(120);
-	?>
 </head>
 <body <?php body_class(); ?>>
 
@@ -23,61 +25,63 @@
 			do_action( 'wp_body_open' );
 		}
 
-		$cedoc_layout = '2';
+		$cedoc_layout = isset( $_GET['layout'] ) ? sanitize_key( wp_unslash( $_GET['layout'] ) ) : '3';
+		if ( ! in_array( $cedoc_layout, array( '1', '2', '3' ), true ) ) {
+			$cedoc_layout = '3';
+		}
 
-		$cedoc_layout_base = home_url( '/' );
-		// Primary menu simplified for commercial layout
+		$cedoc_request_uri = isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : '/';
+		$cedoc_layout_base = home_url( strtok( $cedoc_request_uri, '?' ) );
+		$cedoc_layout_urls = array(
+			'1' => remove_query_arg( 'layout', $cedoc_layout_base ),
+			'2' => add_query_arg( 'layout', '2', $cedoc_layout_base ),
+			'3' => add_query_arg( 'layout', '3', $cedoc_layout_base ),
+		);
+
 		$cedoc_primary_menu = array(
 			array(
-				'label' => 'Sobre nós',
-				'url' => home_url( '/sobre/' ),
+				'label' => 'CEACA Sobre nós',
+				'url' => home_url( '/sobre/#ceaca-sobre-nos' ),
 			),
 			array(
-				'label' => 'Acervo',
-				'url' => home_url( '/catalogo/' ),
+				'label' => 'Articulação',
+				'url' => home_url( '/catalogo/#articulacao' ),
 			),
 			array(
-				'label' => 'Contato',
-				'url' => home_url( '/contato/' ),
+				'label' => 'Documentação de Saberes',
+				'url' => home_url( '/catalogo/#saberes' ),
 			),
 			array(
-				'label' => 'Catalogo',
-				'url' => home_url( '/catalogo/' ),
+				'label' => 'Educação e Cultura',
+				'url' => home_url( '/catalogo/#educacao' ),
+			),
+			array(
+				'label' => 'Eventos / Manifestações culturais',
+				'url' => home_url( '/catalogo/#manifestacoes' ),
 			),
 		);
 
-		$cedoc_v2_menu = array(
-			array(
-				'label' => 'Sobre nós',
-				'url' => home_url( '/sobre/' ),
-			),
-			array(
-				'label' => 'Acervo',
-				'url' => home_url( '/catalogo/' ),
-			),
-			array(
-				'label' => 'Contato',
-				'url' => home_url( '/contato/' ),
-			),
-			array(
-				'label' => 'Redes Sociais',
-				'url' => home_url( '/contato/#redes-sociais' ),
-			),
-		);
-
-		if ( true ) :
+		if ( ! get_theme_mod( 'tainacan_use_block_template_parts_on_header', false ) ) :
 	?>
+	<div class="cedoc-header-layout-switcher" aria-label="Seletor de versão">
+		<span class="cedoc-header-layout-label">Versão do site</span>
+		<div class="cedoc-header-layout-links">
+			<a class="<?php echo '1' === $cedoc_layout ? 'active' : ''; ?>" href="<?php echo esc_url( $cedoc_layout_urls['1'] ); ?>">Versão 1</a>
+			<a class="<?php echo '2' === $cedoc_layout ? 'active' : ''; ?>" href="<?php echo esc_url( $cedoc_layout_urls['2'] ); ?>">Versão 2</a>
+			<a class="<?php echo '3' === $cedoc_layout ? 'active' : ''; ?>" href="<?php echo esc_url( $cedoc_layout_urls['3'] ); ?>">Versão 3</a>
+		</div>
+	</div>
 	<nav 
 			style="min-height: 40px;"
 			class="navbar navbar-expand-md navbar-light bg-white menu-shadow px-0 navbar--border-bottom cedoc-header--v<?php echo esc_attr( $cedoc_layout ); ?> <?php echo 'tainacan-header-layout--' . esc_attr( get_theme_mod( 'tainacan_header_alignment_options', 'default' ) ); ?>">
-		<div class="container-fluid max-large px-0" id="topNavbar">
-			<?php echo wp_kses_post(tainacan_get_logo() ?? ''); ?>
+		<div class="container-fluid max-large px-0 margin-one-column" id="topNavbar">
+			<?php echo wp_kses_post( tainacan_get_logo() ?? '' ); ?>
 
 			<div class="navbar-box cedoc-header-shell cedoc-header-shell--v<?php echo esc_attr( $cedoc_layout ); ?>">
 				<?php if ( '1' === $cedoc_layout ) : ?>
 					<nav class="cedoc-header-nav cedoc-header-nav--v1" aria-label="Categorias do acervo">
 						<?php foreach ( $cedoc_primary_menu as $menu_item ) : ?>
-							<a class="cedoc-header-nav-item" href="<?php echo esc_url( $menu_item['url'] ); ?>">
+							<a class="cedoc-header-nav-item<?php echo 'CEACA Sobre nós' === $menu_item['label'] ? ' cedoc-header-nav-item--featured' : ''; ?>" href="<?php echo esc_url( $menu_item['url'] ); ?>">
 								<?php echo esc_html( $menu_item['label'] ); ?>
 							</a>
 						<?php endforeach; ?>
@@ -93,22 +97,17 @@
 						<div class="cedoc-header-rail__eyebrow">CEACA / Tainacan</div>
 						<div class="cedoc-header-rail__title">Acervo com visual comercial</div>
 					</div>
-					<nav class="cedoc-header-nav cedoc-header-nav--v2 cedoc-header-nav--with-search" aria-label="Categorias do acervo">
-						<?php foreach ( $cedoc_v2_menu as $menu_item ) : ?>
-							<a class="cedoc-header-nav-item" href="<?php echo esc_url( $menu_item['url'] ); ?>">
+					<nav class="cedoc-header-nav cedoc-header-nav--v2" aria-label="Categorias do acervo">
+						<?php foreach ( $cedoc_primary_menu as $menu_item ) : ?>
+							<a class="cedoc-header-nav-item<?php echo 'CEACA Sobre nós' === $menu_item['label'] ? ' cedoc-header-nav-item--featured' : ''; ?>" href="<?php echo esc_url( $menu_item['url'] ); ?>">
 								<?php echo esc_html( $menu_item['label'] ); ?>
 							</a>
 						<?php endforeach; ?>
-
-							<div class="cedoc-header-search cedoc-header-search--v2 cedoc-header-search--inline">
-								<form role="search" method="get" class="cedoc-inline-search" action="<?php echo esc_url( home_url( '/catalogo/' ) ); ?>">
-									<div class="cedoc-inline-search__field">
-										<input class="form-control" type="search" name="s" placeholder="Buscar" id="tainacan-search">
-										<button class="btn cedoc-inline-search__btn" type="submit"><i class="tainacan-icon tainacan-icon-search"></i></button>
-									</div>
-								</form>
-							</div>
 					</nav>
+
+					<div class="cedoc-header-search cedoc-header-search--v2">
+						<?php get_search_form(); ?>
+					</div>
 				<?php else : ?>
 					<nav class="cedoc-header-nav cedoc-header-nav--v3" aria-label="Categorias do acervo">
 						<a class="cedoc-header-nav-hero" href="<?php echo esc_url( $cedoc_primary_menu[0]['url'] ); ?>">
@@ -135,10 +134,10 @@
 		</div>
 	</nav>
 
-	<?php else:	block_template_part( 'header' ); endif; ?>
+	<?php else: block_template_part( 'header' ); endif; ?>
 
-	<a href="javascript:" id="return-to-top" style="<?php echo (get_theme_mod( 'tainacan_footer_color', 'dark' ) == 'colored' ? 'background-color: #2c2d2d;' : '') ?>"><i class="tainacan-icon tainacan-icon-arrowup"></i></a>
+	<a href="javascript:" id="return-to-top" style="<?php echo ( get_theme_mod( 'tainacan_footer_color', 'dark' ) == 'colored' ? 'background-color: #2c2d2d;' : '' ); ?>"><i class="tainacan-icon tainacan-icon-arrowup"></i></a>
 
-    <?php if ( !is_page_template( 'page-templates/landing.php' ) ) : ?>
+	<?php if ( ! is_page_template( 'page-templates/landing.php' ) ) : ?>
 		<?php echo wp_kses_post( tainacan_interface_the_breadcrumb() ); ?>
 	<?php endif; ?>
