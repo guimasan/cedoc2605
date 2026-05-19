@@ -7,75 +7,185 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body data-image-base="../assets/images/">
-  <header class="versions-topbar" aria-label="Navegação entre versões">
-    <a href="../versoes/index.html">Hub</a>
-    <a href="../index.html">Demo</a>
-    <a class="active" href="index.html">Versão 3</a>
+  <header class="site-header">
+    <nav class="top-nav" aria-label="Navegação principal">
+      <a href="sobre.html">Sobre nós</a>
+      <a class="active" href="catalogo.html">Acervo</a>
+      <a href="contato.html">Parcerias</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <div class="header-right">
+      <div class="icon-row" aria-hidden="true">
+        <a class="share-icon" href="#">ig</a>
+        <a class="share-icon" href="#">yt</a>
+        <a class="share-icon" href="#">f</a>
+      </div>
+      <a class="cta-pill" href="contato.html">contribua</a>
+    </div>
   </header>
 
-  <div class="site-shell">
-    <header class="site-header">
-      <a class="brand" href="index.html" aria-label="Ir para a página inicial">
-        <img src="../assets/images/logo.svg" alt="CEACA">
-        <span class="brand-text">
-          <span class="brand-kicker">CEACA CEDOC</span>
-          <strong>Centro de Estudos e Aplicação da Capoeira</strong>
-        </span>
-      </a>
-      <nav class="site-nav" aria-label="Navegação principal">
-        <a class="active" href="sobre.html">Sobre nós</a>
-        <a href="catalogo.html">Acervo</a>
-        <a href="contato.html">Contato</a>
-        <a href="contato.html#redes-sociais">Redes Sociais</a>
-      </nav>
-      <form class="searchbar" action="catalogo.html" method="get">
-        <label class="sr-only" for="search-v3">Buscar no acervo</label>
-        <input id="search-v3" name="q" type="search" placeholder="Buscar no acervo">
-        <button type="submit" aria-label="Buscar">🔍</button>
-      </form>
-    </header>
-  </div>
-
   <main>
-    <section class="site-shell">
-      <section class="hero">
-        <div class="hero-copy">
-          <span class="eyebrow">versão 3</span>
-          <h1>Layout Canva exportável.</h1>
-          <p class="hero-intro">Estrutura pronta para HostGator, com navegação clara, blocos institucionais e imagens reais do acervo.</p>
-          <div class="hero-cta">
-            <a class="button primary" href="catalogo.html">Abrir acervo</a>
-            <a class="button secondary" href="sobre.html">Sobre nós</a>
-          </div>
-          <div class="chip-cloud">
-            <span class="chip active">parcerias</span>
-            <span class="chip">contribua</span>
-            <span class="chip">busca</span>
-            <span class="chip">categorias</span>
-          </div>
-        </div>
-        <div class="hero-visual">
-          <img data-random="true" src="../assets/images/capa.png" alt="CEACA CEDOC">
-          <div class="hero-overlay">
-            <div class="mini-grid">
-              <article class="mini-card"><span class="card-kicker">o que é o Acervo CEDOC</span><h3>Acervo</h3><p>Entrada pública para memória, pesquisa e difusão.</p></article>
-              <article class="mini-card"><span class="card-kicker">busca</span><h3>Filtro rápido</h3><p>Localize conteúdos com navegação por tema.</p></article>
-              <article class="mini-card"><span class="card-kicker">categorias</span><h3>Blocos temáticos</h3><p>História, publicações, projetos e reconhecimentos.</p></article>
-              <article class="mini-card"><span class="card-kicker">solicitação de conteúdo</span><h3>Contribua</h3><p>Pedidos e participação no acervo.</p></article>
+    <section class="hero-banner">
+      <div class="hero-banner__media">
+        <img src="../assets/images/capa.png" alt="Capoeira em roda">
+        <h1 class="hero-banner__title">CENTRO DE ESTUDOS E APLICAÇÃO DA CAPOEIRA</h1>
+      </div>
+    </section>
+
+    <section class="subnav" aria-label="Sub navegação">
+      <div class="subnav__inner">
+        <a class="menu-link active" href="#sobre">Sobre nós</a>
+        <div class="menu-trigger">
+          <a class="menu-link active" href="#acervo">Acervo</a>
+          <div class="mega-menu" aria-label="Categorias do acervo">
+            <div class="mega-menu__col">
+              <h4>CEACA</h4>
+              <a href="#sobre">história CEACA</a>
+              <a href="#sobre">propósito/valores</a>
+              <a href="#sobre">pessoas/equipe</a>
+              <a href="#sobre">pedagogia CEACA</a>
+              <a href="#sobre">gestão atual (?)</a>
+              <a href="#sobre">reconhecimentos</a>
+              <a href="#sobre">publicações</a>
+            </div>
+            <div class="mega-menu__col">
+              <h4>Acervo</h4>
+              <a href="#categorias">o que é o Acervo CEDOC</a>
+              <a href="#categorias">busca</a>
+              <a href="#categorias">categorias</a>
+              <a href="#categorias">solicitação de conteúdo</a>
+              <a href="#categorias">políticas de uso (acervo e privacidade)</a>
+              <a href="#categorias">projetos</a>
+              <a href="#categorias">editais</a>
+              <a href="#categorias">EMEF Amorim Lima</a>
             </div>
           </div>
         </div>
-      </section>
-
-      <section class="section-card">
-        <div class="section-heading"><div><span class="section-kicker">navegação</span><h2>Sob nós, acervo e contato no mesmo fluxo visual.</h2></div></div>
-        <div class="info-grid">
-          <article class="info-card"><span class="card-kicker">sobre nós</span><h3>História CEACA</h3><p>Conteúdo institucional e propósito do centro.</p></article>
-          <article class="info-card"><span class="card-kicker">acervo</span><h3>Categorias</h3><p>Catalogação por temas e coleções.</p></article>
-          <article class="info-card"><span class="card-kicker">contato</span><h3>Contribua</h3><p>Canal de comunicação e envio de materiais.</p></article>
+        <a class="menu-link" href="#parcerias">Parcerias</a>
+        <a class="menu-link" href="#contato">Contato</a>
+        <a class="menu-link" href="#busca">🔍</a>
+        <div class="header-right">
+          <div class="icon-row" aria-hidden="true">
+            <a class="share-icon" href="#">ig</a>
+            <a class="share-icon" href="#">yt</a>
+            <a class="share-icon" href="#">f</a>
+          </div>
+          <a class="cta-pill" href="#contato">contribua</a>
         </div>
-      </section>
+      </div>
+    </section>
+
+    <section class="site-shell hero-stack" id="sobre">
+      <div class="hero-stack__row">
+        <h2 class="hero-stack__headline">CENTRO DE ESTUDOS E APLICAÇÃO DA CAPOEIRA</h2>
+        <div class="intro-card">
+          <h2>CEACA</h2>
+          <p class="section-copy">O Centro de Estudos e Aplicação da Capoeira (CEACA) é uma associação sem fins lucrativos que promove a Capoeira e cultiva afro-brasileira como um bem que deve ser compartilhado e investigado. Foi fundada em 10 de abril de 1988, registrada com CNPJ 06.166.648/0001-04 (02.02.2004).</p>
+        </div>
+      </div>
+      <div class="intro-columns">
+        <div class="intro-card">
+          <h2>CEDOC</h2>
+          <p class="section-copy">O Centro de Documentação do CEACA tem sob sua responsabilidade um robusto acervo documental que merece ser documentado, preservado e extraído. As principais coleções são os registros das atividades desenvolvidas pela associação, como formação de capoeiristas e apresentações culturais, que compõem a história da associação e refletem o comprometimento do trabalho de seus dirigentes e associados.</p>
+        </div>
+        <div class="intro-card">
+          <h2 id="parcerias">PARCERIAS</h2>
+          <p class="section-copy">A página organiza os temas do Canva em blocos editoriais, com busca, categorias e áreas de consulta direta para que o conteúdo fique navegável no mesmo fluxo visual da referência.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="site-shell category-section" id="categorias">
+      <h2 class="section-title">CATEGORIAS DO ACERVO</h2>
+      <div class="category-grid">
+        <article class="category-card"><img class="category-card__media" src="../assets/images/section_tabs.png" alt="CEACA"><div class="category-card__body"><h3>CEACA</h3><p>Roda, processos do grupo e marcos da trajetória institucional.</p></div></article>
+        <article class="category-card"><img class="category-card__media" src="../assets/images/section_default.png" alt="educação e cultura tradicional"><div class="category-card__body"><h3>educação e cultura tradicional</h3><p>Políticas públicas, projetos pedagógicos, tradição oral e território.</p></div></article>
+        <article class="category-card"><img class="category-card__media" src="../assets/images/section_tabs.png" alt="articulação"><div class="category-card__body"><h3>articulação</h3><p>Parcerias institucionais, ponto de cultura e agenciamento.</p></div></article>
+        <article class="category-card"><img class="category-card__media" src="../assets/images/section_accordion.png" alt="documentação de saberes"><div class="category-card__body"><h3>documentação de saberes</h3><p>Artigos, teses, livros e registros de campo do acervo.</p></div></article>
+        <article class="category-card"><img class="category-card__media" src="../assets/images/section_default.png" alt="manifestações culturais"><div class="category-card__body"><h3>manifestações culturais</h3><p>Rodas, apresentações, festas, cortejos e vivências culturais.</p></div></article>
+      </div>
+    </section>
+
+    <section class="site-shell category-section">
+      <h2 class="section-title">CATEGORIAS DO ACERVO</h2>
+      <div class="category-grid">
+        <article class="category-card"><img class="category-card__media" src="../assets/images/section_tabs.png" alt="CEACA"><div class="category-card__body"><h3>CEACA</h3><p>Memória e acervo: formação, eventos e materiais históricos.</p></div></article>
+        <article class="category-card"><img class="category-card__media" src="../assets/images/section_default.png" alt="educação e cultura tradicional"><div class="category-card__body"><h3>educação e cultura tradicional</h3><p>Políticas públicas, programas e tradição oral.</p></div></article>
+        <article class="category-card"><img class="category-card__media" src="../assets/images/section_tabs.png" alt="articulação"><div class="category-card__body"><h3>articulação</h3><p>Parcerias, redes e encontros de cultura.</p></div></article>
+        <article class="category-card"><img class="category-card__media" src="../assets/images/section_accordion.png" alt="documentação de saberes"><div class="category-card__body"><h3>documentação de saberes</h3><p>Teses e dissertações, artigos, projetos e publicações.</p></div></article>
+        <article class="category-card"><img class="category-card__media" src="../assets/images/section_default.png" alt="manifestações culturais"><div class="category-card__body"><h3>manifestações culturais</h3><p>Rodas e apresentações, danças, festas e rodas de conversa.</p></div></article>
+      </div>
+    </section>
+
+    <section class="site-shell search-section" id="busca">
+      <div>
+        <h2 class="section-title">BUSCA</h2>
+        <p class="section-copy">aqui você pode encontrar o material que deseja sobre o CEACA.</p>
+        <div class="search-visual">
+          <img src="../assets/images/section_accordion.png" alt="Busca no acervo">
+        </div>
+      </div>
+      <form class="search-side">
+        <label>nome
+          <input type="text" name="nome">
+        </label>
+        <label>data
+          <input type="text" name="data">
+        </label>
+        <label>palavras - chave
+          <input type="text" name="palavras">
+        </label>
+        <label>descrição
+          <textarea name="descricao"></textarea>
+        </label>
+      </form>
+    </section>
+
+    <section class="site-shell doc-section">
+      <h2>O CENTRO DE DOCUMENTAÇÃO</h2>
+      <p class="doc-text">caracteriza-se como uma entidade que recebe doações de documentos e objetos de pessoas que, de modo direto ou indireto, contribuem para a constituição da história e das saberes próprios do CEACA. Tem como objetivo guardar e cuidar documentos de pessoas que, de algum modo, contribuíram para a história do CEACA. Receber e manter fundos documentais que reúnam arquivos sobre diferentes temáticas, mas que, ao constituírem um Fundo, tenham uma única origem comum: um mestre, um pesquisador, um grupo, etc. O que é uma instituição, deve nomear o Fundo; e nomear o acervo é documentação de resultados, doação, pesquisa e permuta sobre a documentação constante.</p>
+      <div class="doc-figure">
+        <img src="../assets/images/section_default.png" alt="Equipe do centro de documentação">
+      </div>
+    </section>
+
+    <section class="site-shell memory-section">
+      <h2>CENTRO DE DOCUMENTAÇÃO E MEMÓRIA</h2>
+      <p class="memory-copy">É um espaço de acervo e memória institucional da trabalho desenvolvido pelo CEACA em mais de três décadas com a capoeira, como Patrimônio da Cultura Imaterial Brasileira, e com outras expressões das culturas tradicionais.</p>
+      <div class="memory-section__grid">
+        <div class="memory-mark">
+          <img src="../assets/images/logo-footer.svg" alt="CEACA">
+          <h3>UMA HISTÓRIA DE RESISTÊNCIA, CULTURA E EDUCAÇÃO</h3>
+        </div>
+        <div class="memory-visual">
+          <img src="../assets/images/section_tabs.png" alt="Memória CEACA">
+        </div>
+      </div>
     </section>
   </main>
+
+  <footer class="footer-shell">
+    <div class="footer">
+      <div class="footer-grid">
+        <div class="footer-brands">
+          <img src="../assets/images/logo-footer.svg" alt="CEACA">
+          <img src="../assets/images/url-circle.png" alt="URL">
+          <img src="../assets/images/whatsapp-circle.png" alt="WhatsApp">
+        </div>
+        <div class="footer-contact">
+          <strong>CEACA</strong>
+          <div>Tel: 1234-5678</div>
+          <div>email: contato@ceaca.org</div>
+          <div>Rua Exemplo, 123</div>
+        </div>
+        <div class="footer-right" id="contato">
+          <strong>ponto de troca</strong>
+          <div>amorim lima ceaca</div>
+          <div>parcerias / memória</div>
+          <div>pedagogia / doc</div>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
