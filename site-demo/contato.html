@@ -27,64 +27,91 @@
         <input id="search-contato" name="q" type="search" placeholder="Buscar no acervo">
         <button type="submit" aria-label="Buscar">🔍</button>
       </form>
-    </header>
-  </div>
-
-  <main class="site-shell">
-    <section class="hero">
-      <div class="hero-copy">
-        <span class="eyebrow">contato</span>
-        <h1>Solicitação de conteúdo e contribuições.</h1>
-        <p class="hero-intro">Entre em contato para pedir arquivos, sugerir materiais, propor parcerias ou enviar contribuições para o acervo.</p>
-        <div class="hero-cta">
-          <a class="button primary" href="mailto:capoeiraceaca@gmail.com">Enviar e-mail</a>
-          <a class="button secondary" href="catalogo.html">Ver acervo</a>
-        </div>
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Contato - CEACA CEDOC</title>
+      <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+      <div class="site-shell">
+        <header class="site-header">
+          <a class="brand" href="index.html" aria-label="Ir para a página inicial">
+            <img src="assets/images/logo.svg" alt="CEACA">
+            <span class="brand-text">
+              <span class="brand-kicker">CEACA CEDOC</span>
+              <strong>Centro de Estudos e Aplicação da Capoeira</strong>
+            </span>
+          </a>
+          <nav class="site-nav" aria-label="Navegação principal">
+            <a href="index.html">Sobre nós</a>
+            <a href="catalogo.html">Acervo</a>
+            <a class="active" href="contato.html">Contato</a>
+            <a href="#redes-sociais">Redes Sociais</a>
+          </nav>
+          <form class="searchbar" action="catalogo.html" method="get">
+            <label class="sr-only" for="search-contato">Buscar no acervo</label>
+            <input id="search-contato" name="q" type="search" placeholder="Buscar no acervo">
+            <button type="submit" aria-label="Buscar">🔍</button>
+          </form>
+        </header>
       </div>
-      <div class="hero-visual">
-        <img src="assets/images/capa.png" alt="Contato CEACA">
-        <div class="hero-overlay">
-          <div class="mini-grid">
-            <article class="mini-card"><span class="card-kicker">contribua</span><h3>Compartilhe referências</h3><p>Envie imagens, textos, depoimentos e documentos.</p></article>
-            <article class="mini-card"><span class="card-kicker">parcerias</span><h3>Articulação</h3><p>Fale sobre projetos, redes e colaborações.</p></article>
-            <article class="mini-card"><span class="card-kicker">políticas de uso</span><h3>Privacidade e acervo</h3><p>Saiba como o material é organizado e divulgado.</p></article>
-            <article class="mini-card"><span class="card-kicker">solicitação de conteúdo</span><h3>Pedidos</h3><p>Solicite consultas, reproduções e referências.</p></article>
+
+      <main class="site-shell">
+        <section class="hero">
+          <div class="hero-copy">
+            <span class="eyebrow">contato</span>
+            <h1>Solicitação de conteúdo e contribuições.</h1>
+            <p class="hero-intro">Entre em contato para pedir arquivos, sugerir materiais, propor parcerias ou enviar contribuições para o acervo.</p>
+            <div class="hero-cta">
+              <a class="button primary" href="mailto:capoeiraceaca@gmail.com">Enviar e-mail</a>
+              <a class="button secondary" href="catalogo.html">Ver acervo</a>
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-card">
-      <div class="section-heading">
-        <div><span class="section-kicker">contato direto</span><h2>Canal oficial do CEACA CEDOC.</h2></div>
-      </div>
-      <div class="split-grid">
-        <article class="contact-card">
-          <span class="card-kicker">E-mail</span>
-          <h3>capoeiraceaca@gmail.com</h3>
-          <p>Resposta para dúvidas, pedidos de conteúdo e propostas de colaboração.</p>
-        </article>
-        <article class="contact-card" id="redes-sociais">
-          <span class="card-kicker">redes sociais</span>
-          <h3>Compartilhe o projeto</h3>
-          <p>Use as redes abaixo para encaminhar a página para outras pessoas interessadas no acervo.</p>
-          <div class="contact-links">
-            <a href="mailto:capoeiraceaca@gmail.com">E-mail</a>
-            <a href="https://wa.me/?text=CEACA%20CEDOC" target="_blank" rel="noreferrer noopener">WhatsApp</a>
-            <a href="https://www.facebook.com" target="_blank" rel="noreferrer noopener">Facebook</a>
-            <a href="https://www.instagram.com" target="_blank" rel="noreferrer noopener">Instagram</a>
+          <div class="hero-visual">
+            <img src="assets/images/section_default.png" alt="Contato CEACA">
+            <div class="hero-overlay">
+              <div class="mini-grid">
+                <article class="mini-card"><span class="card-kicker">contribua</span><h3>Compartilhe referências</h3><p>Envie imagens, textos, depoimentos e documentos.</p></article>
+                <article class="mini-card"><span class="card-kicker">parcerias</span><h3>Articulação</h3><p>Fale sobre projetos, redes e colaborações.</p></article>
+                <article class="mini-card"><span class="card-kicker">políticas de uso</span><h3>Privacidade e acervo</h3><p>Saiba como o material é organizado e divulgado.</p></article>
+                <article class="mini-card"><span class="card-kicker">solicitação de conteúdo</span><h3>Pedidos</h3><p>Solicite consultas, reproduções e referências.</p></article>
+              </div>
+            </div>
           </div>
-        </article>
-      </div>
-    </section>
-  </main>
+        </section>
 
-  <footer class="footer-shell">
-    <div class="footer">
-      <p>© 2026 CEACA CEDOC. E-mail: capoeiraceaca@gmail.com</p>
-    </div>
-  </footer>
+        <section class="section-card">
+          <div class="section-heading">
+            <div><span class="section-kicker">contato direto</span><h2>Canal oficial do CEACA CEDOC.</h2></div>
+          </div>
+          <div class="split-grid">
+            <article class="contact-card">
+              <span class="card-kicker">E-mail</span>
+              <h3>capoeiraceaca@gmail.com</h3>
+              <p>Resposta para dúvidas, pedidos de conteúdo e propostas de colaboração.</p>
+            </article>
+            <article class="contact-card" id="redes-sociais">
+              <span class="card-kicker">redes sociais</span>
+              <h3>Compartilhe o projeto</h3>
+              <p>Use as redes abaixo para encaminhar a página para outras pessoas interessadas no acervo.</p>
+              <div class="contact-links">
+                <a href="mailto:capoeiraceaca@gmail.com">E-mail</a>
+                <a href="https://wa.me/?text=CEACA%20CEDOC" target="_blank" rel="noreferrer noopener">WhatsApp</a>
+                <a href="https://www.facebook.com" target="_blank" rel="noreferrer noopener">Facebook</a>
+                <a href="https://www.instagram.com" target="_blank" rel="noreferrer noopener">Instagram</a>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
 
-  <script src="shared/random-images.js"></script>
-</body>
-</html>
+      <footer class="footer-shell">
+        <div class="footer">
+          <p>© 2026 CEACA CEDOC. E-mail: capoeiraceaca@gmail.com</p>
+        </div>
+      </footer>
+    </body>
+    </html>
